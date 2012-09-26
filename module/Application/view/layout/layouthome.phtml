@@ -20,7 +20,7 @@
                                   ->prependFile($this->basePath() . '/js/jquery-1.7.2.min.js') ?>
 
   </head>
-  <body>
+  <body class="fbIndex UIPage_LoggedOut ff4 win Locale_en_US">
 	  <div class="_li">
 	  	<!-- Header -->
 	  	<div data-referrer="pagelet_bluebar" id="pagelet_bluebar">
@@ -78,9 +78,218 @@
 		</div>
 		
 		<div class="uiContextualLayerParent" id="globalContainer">
-		<!-- Panel Left -->
-		<!-- Panel Right -->
-		<!-- Footer -->
+			<div class="fb_content clearfix" id="content">
+				<div>
+					<div class="gradient">
+						<div class="gradientContent">
+							<div class="clearfix fbIndexFeaturedRegistration">
+							
+			<!-- Panel Left -->
+								<div class="feature lfloat">
+									<div class="clearfix fbIndexMobile">
+										<a role="button" rel="dialog" href="#" tabindex="-1" ajaxify="/ajax/mobile/sms_link/?src=lo&amp;type=install_via_sms" class="lfloat">
+											<img width="97" height="205" alt="" src="http://static.ak.fbcdn.net/rsrc.php/v2/yt/r/FZaMKqARgC6.png" class="mtm phoneImage img">
+										</a>
+										<div class="clearfix rightSide rfloat">
+											<div class="lfloat">
+												<div class="title fsl fwb fcb">Heading out? Stay connected</div>
+												<div class="subtitle fsm fwn fcg">Visit facebook.com on your mobile phone.</div>
+											</div>
+											<a rel="dialog" ajaxify="/ajax/mobile/sms_link/?src=lo&amp;type=install_via_sms" role="button" href="#" class="mrl mobileButton rfloat uiButton">
+												<span class="uiButtonText">Get Facebook Mobile</span></a>
+										</div>
+									</div>
+								</div>	
+			<!-- Panel Right -->
+								<div class="signupForm rfloat">
+									<div class="mbm phm headerTextContainer">
+										<div class="mbs mainTitle fsl fwb fcb">Sign Up</div>
+										<div class="mbm subtitle fsm fwn fcg">It's free and always will be.</div>
+									</div>
+									<div id="registration_container">
+										<div data-referrer="simple_registration_form">
+											<div class="simple_registration_container" id="simple_registration_container">
+												<div id="reg_box">
+													<form id="reg">
+														<div class="large_form" id="reg_form_box">
+															<table cellspacing="0" cellpadding="1" class="uiGrid editor">
+																<tbody>
+																	<tr>
+																		<td class="label">
+																			<label for="firstname">First Name:</label>
+																		</td>
+																		<td>
+																			<div class="field_container">
+																				<input type="text" name="firstname" id="firstname" class="inputtext" title="">
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td class="label">
+																			<label for="lastname">Last Name:</label>
+																		</td>
+																		<td>
+																			<div class="field_container">
+																				<input type="text" name="lastname" id="lastname" class="inputtext">
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td class="label">
+																			<label for="reg_email__">Your Email:</label>
+																		</td>
+																		<td>
+																			<div class="field_container">
+																				<input type="text" name="reg_email__" id="reg_email__" class="inputtext">
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td class="label">
+																			<label for="reg_email_confirmation__">Re-enter Email:</label>
+																		</td>
+																		<td>
+																			<div class="field_container">
+																				<input type="text" name="reg_email_confirmation__" id="reg_email_confirmation__" class="inputtext">
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td class="label">
+																			<label for="reg_passwd__">New Password:</label>
+																		</td>
+																		<td>
+																			<div class="field_container">
+																				<input type="password" value="" name="reg_passwd__" id="reg_passwd__" class="inputtext">
+																			</div>
+																		</td>																		
+																	</tr>
+																	<tr>
+																		<td class="label">I am:</td>
+																		<td>
+																			<div class="field_container">																			
+																				<select id="sex" name="sex" class="select">
+																					<option value="0">Select Sex:</option>
+																					<option value="1">Female</option>
+																					<option value="2">Male</option>
+																				</select>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td class="label">Birthday:</td>
+																		<td>
+																			<div class="field_container">
+																			<select onchange="return run_with(this, [&quot;editor&quot;], function() {editor_date_month_change(this, &quot;birthday_day&quot;, &quot;birthday_year&quot;);});" class="" aria-label="Month" id="birthday_month" name="birthday_month">
+																				<option value="-1">Month:</option>
+																				<option value="1">Jan</option>
+																				<option value="2">Feb</option>
+																				<option value="3">Mar</option>
+																				<option value="4">Apr</option>
+																				<option value="5">May</option>
+																				<option value="6">Jun</option>
+																				<option value="7">Jul</option>
+																				<option value="8">Aug</option>
+																				<option value="9">Sep</option>
+																				<option value="10">Oct</option>
+																				<option value="11">Nov</option>
+																				<option value="12">Dec</option>
+																			</select> 
+																			<select class="" aria-label="Day" id="birthday_day" name="birthday_day">
+																				<option value="-1">Day:</option>
+																				<option value="1">1</option>
+																				<option value="2">2</option>
+																				<option value="3">3</option>
+																				<option value="4">4</option>
+																				<option value="5">5</option>
+																				<option value="6">6</option>
+																				<option value="7">7</option>
+																				<option value="8">8</option>
+																				<option value="9">9</option>
+																				<option value="10">10</option>
+																				<option value="11">11</option>
+																				<option value="12">12</option>
+																				<option value="13">13</option>
+																				<option value="14">14</option>
+																				<option value="15">15</option>
+																				<option value="16">16</option>
+																				<option value="17">17</option>
+																				<option value="18">18</option>
+																				<option value="19">19</option>
+																				<option value="20">20</option>
+																				<option value="21">21</option>
+																				<option value="22">22</option>
+																				<option value="23">23</option>
+																				<option value="24">24</option>
+																				<option value="25">25</option>
+																				<option value="26">26</option>
+																				<option value="27">27</option>
+																				<option value="28">28</option>
+																			</select>
+																			<select onchange="return run_with(this, [&quot;editor&quot;], function() {editor_date_month_change(&quot;birthday_month&quot;,&quot;birthday_day&quot;,this);});" class="" aria-label="Year" id="birthday_year" name="birthday_year">
+																				<option value="-1">Year:</option>
+																				<option value="2012">2012</option>
+																				<option value="2011">2011</option>
+																				<option value="2010">2010</option>
+																			</select>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td class="label"></td>
+																	<td>
+																		<div id="birthday_warning">
+																			<a rel="async" title="Click for more information" ajaxify="/help/ajax/reg_birthday" href="#">Why do I need to provide my birthday?</a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td class="label"></td>
+																	<td>
+																		<div id="ppt_container" class="fbRegistrationPPT">
+																			<p class="privacy_policy_text text">By clicking Sign Up, you agree to our <a rel="nofollow" target="_blank" href="/terms.php">Terms</a> and that you have read our <a rel="nofollow" target="_blank" href="/policy.php">Data Use Policy</a>, including our <a rel="nofollow" target="_blank" href="/help/cookies/">Cookie Use</a>.</p>
+																		</div>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+															<div class="reg_btn clearfix">
+																<label for="ujyw3k41" class="uiButton uiButtonSpecial">
+																	<input type="submit" id="ujyw3k41" onclick="setFormTypeABTest($(&quot;reg&quot;)); RegistrationBootloader.bootloadAndValidate();" value="Sign Up">
+																</label>
+															</div>
+														</div>
+													</form>
+													<div class="" id="reg_error" style="opacity: 1; height: auto;">
+														<div id="reg_error_inner">
+															<form>Sorry, it looks like btphuong2345@yahoo.com belongs to an existing account. Would you like to <label class="uiLinkButton"><input type="submit" value="claim this email address"></label>?</form>
+														</div>
+													</div>
+													<div class="tos_container" id="tos_container">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+			<!-- Footer -->
+			<div data-referrer="page_footer" id="pageFooter">
+				<div id="contentCurve"></div>
+				<div id="footerContainer" class="clearfix">
+					<div class="mrl lfloat">
+						<div class="fsm fwn fcg">
+							<span> Facebook &copy; 2012</span> · <a role="button" title="Use Facebook in another language." href="/ajax/intl/language_dialog.php?uri=http%3A%2F%2Fwww.facebook.com%2F" rel="dialog">English (US)</a>
+						</div>
+					</div>
+					<div aria-label="Facebook site links" role="contentinfo" class="navigation fsm fwn fcg"><a title="Check out Facebook Mobile." href="http://www.facebook.com/mobile/?ref=pf">Mobile</a> · <a title="Find anyone on the web." href="http://www.facebook.com/find-friends?ref=pf">Find Friends</a> · <a title="Embed a Facebook badge on your website." href="http://www.facebook.com/badges/?ref=pf">Badges</a> · <a title="Browse our people directory." href="http://www.facebook.com/directory/people/">People</a> · <a title="Browse our pages directory." href="http://www.facebook.com/directory/pages/">Pages</a> · <a title="Read our blog, discover the resource center, and find job opportunities." accesskey="8" href="http://www.facebook.com/facebook">About</a> · <a title="Advertise on Facebook." href="http://www.facebook.com/campaign/landing.php?placement=pflo&amp;campaign_id=402047449186&amp;extra_1=auto">Create an Ad</a> · <a title="Create a Page" href="http://www.facebook.com/pages/create.php?ref_type=sitefooter">Create a Page</a> · <a title="Develop on our platform." href="http://developers.facebook.com/?ref=pf">Developers</a> · <a title="Make your next career move to our awesome company." href="http://www.facebook.com/careers/?ref=pf">Careers</a> · <a title="Learn about your privacy and Facebook." href="http://www.facebook.com/privacy/explanation">Privacy</a> · <a title="Learn about cookies and Facebook." href="http://www.facebook.com/help/cookies">Cookies</a> · <a title="Review our terms and policies." accesskey="9" href="http://www.facebook.com/policies/?ref=pf">Terms</a> · <a title="Visit our Help Center." accesskey="0" href="http://www.facebook.com/help/?ref=pf">Help</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	  </div>
   </body>
