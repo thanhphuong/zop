@@ -1,0 +1,67 @@
+<?php echo $this->doctype(); ?>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <?php echo $this->headTitle('Zerocool')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+    <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+
+    <!-- Le styles -->
+    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/images/favicon.ico'))
+                    ->prependStylesheet($this->basePath() . '/css/style1.css')
+                    ->prependStylesheet($this->basePath() . '/css/style2.css')
+                    ->prependStylesheet($this->basePath() . '/css/style3.css')
+                    ->prependStylesheet($this->basePath() . '/css/style4.css')
+                    ->prependStylesheet($this->basePath() . '/css/style5.css')                    
+                    ->prependStylesheet($this->basePath() . '/css/style6.css') ?>
+
+    <!-- Scripts -->
+    <?php echo $this->headScript()->prependFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+                                  ->prependFile($this->basePath() . '/js/jquery-1.7.2.min.js') ?>
+
+  </head>
+  <body class="fbIndex UIPage_LoggedOut ff4 win Locale_en_US">
+	  <div class="_li">
+	  	<!-- Header -->
+	  	<div data-referrer="pagelet_bluebar" id="pagelet_bluebar">
+	  		<div id="blueBarHolder">
+	  			<div id="blueBar">
+	  				<div class="loggedout_menubar_container">
+		  				<div class="clearfix loggedout_menubar">
+		  					<a title="Go to Zerocool Home" href="/" class="lfloat">
+		  						<i class="fb_logo img sp_1zq7t7 sx_082ee8"><u><?php echo $this->translate('Zerocool logo')?></u></i>
+		  					</a>
+			  				<div class="rfloat">
+			  	<!-- Login form -->
+				  				<?php echo $this->render('layout/login.phtml') ?>	
+			  				</div>
+		  				</div>
+	  				</div>
+	  			</div>
+	 		</div>
+		</div>
+		
+		<div class="uiContextualLayerParent" id="globalContainer">
+			<div class="fb_content clearfix" id="content">
+				<div>
+					<?php echo $this->content; ?>
+				</div>
+			</div>	
+			<!-- Footer -->
+			<div data-referrer="page_footer" id="pageFooter">
+				<div id="contentCurve"></div>
+				<div id="footerContainer" class="clearfix">
+					<div class="mrl lfloat">
+						<div class="fsm fwn fcg">
+							<span> <?php echo $this->translate('Zerocool')?> &copy; 2012</span> · <a title="<?php echo $this->translate('Use Zerocool in another language.')?>" href="#" >English (US)</a>
+						</div>
+					</div>
+					<div class="navigation fsm fwn fcg">
+						<a title="<?php echo $this->translate('Review our terms and policies.')?>" href="#"><?php echo $this->translate('Term')?></a> · <a title="<?php echo $this->translate('Visit our Help Center.')?>" href="#"><?php echo $this->translate('Help')?></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	  </div>
+  </body>
+</html>
