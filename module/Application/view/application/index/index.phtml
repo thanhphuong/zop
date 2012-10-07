@@ -28,7 +28,7 @@
 					<div data-referrer="simple_registration_form">
 						<div class="simple_registration_container" id="simple_registration_container">
 							<div id="reg_box">
-								<form id="reg">
+								<form id="reg" name="reg" method="post" action="/account/register">
 									<div class="large_form" id="reg_form_box">
 										<table cellspacing="0" cellpadding="1" class="uiGrid editor">
 											<tbody>
@@ -83,7 +83,7 @@
 													</td>																		
 												</tr>
 												<tr>
-													<td class="label">I am:</td>
+													<td class="label"><?php echo $this->translate('I am:')?></td>
 													<td>
 														<div class="field_container">																			
 															<select id="sex" name="sex" class="select">
@@ -98,22 +98,22 @@
 													<td class="label"><?php echo $this->translate('Birthday:')?></td>
 													<td>
 														<div class="field_container">
-														<select onchange="return run_with(this, [&quot;editor&quot;], function() {editor_date_month_change(this, &quot;birthday_day&quot;, &quot;birthday_year&quot;);});" class="" aria-label="Month" id="birthday_month" name="birthday_month">
+														<select class="" id="birthday_month"  onchange="selectMonth()" name="birthday_month">
 															<option value="-1"><?php echo $this->translate('Month:')?></option>
-															<option value="1">Jan</option>
-															<option value="2">Feb</option>
-															<option value="3">Mar</option>
-															<option value="4">Apr</option>
-															<option value="5">May</option>
-															<option value="6">Jun</option>
-															<option value="7">Jul</option>
-															<option value="8">Aug</option>
-															<option value="9">Sep</option>
-															<option value="10">Oct</option>
-															<option value="11">Nov</option>
-															<option value="12">Dec</option>
+															<option value="1"><?php echo $this->translate('Jan')?></option>
+															<option value="2"><?php echo $this->translate('Feb')?></option>
+															<option value="3"><?php echo $this->translate('Mar')?></option>
+															<option value="4"><?php echo $this->translate('Apr')?></option>
+															<option value="5"><?php echo $this->translate('May')?></option>
+															<option value="6"><?php echo $this->translate('Jun')?></option>
+															<option value="7"><?php echo $this->translate('Jul')?></option>
+															<option value="8"><?php echo $this->translate('Aug')?></option>
+															<option value="9"><?php echo $this->translate('Sep')?></option>
+															<option value="10"><?php echo $this->translate('Oct')?></option>
+															<option value="11"><?php echo $this->translate('Nov')?></option>
+															<option value="12"><?php echo $this->translate('Dec')?></option>
 														</select> 
-														<select class="" aria-label="Day" id="birthday_day" name="birthday_day">
+														<select class="" id="birthday_day" name="birthday_day">
 															<option value="-1"><?php echo $this->translate('Day:')?></option>
 															<option value="1">1</option>
 															<option value="2">2</option>
@@ -144,7 +144,7 @@
 															<option value="27">27</option>
 															<option value="28">28</option>
 														</select>
-														<select onchange="return run_with(this, [&quot;editor&quot;], function() {editor_date_month_change(&quot;birthday_month&quot;,&quot;birthday_day&quot;,this);});" class="" aria-label="Year" id="birthday_year" name="birthday_year">
+														<select id="birthday_year" name="birthday_year">
 															<option value="-1">Year:</option>
 															<option value="2012">2012</option>
 															<option value="2011">2011</option>
