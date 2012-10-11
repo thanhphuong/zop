@@ -3,6 +3,7 @@ return array(
     'modules' => array(
         'Application',
     		'Account',
+    		'Map',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
