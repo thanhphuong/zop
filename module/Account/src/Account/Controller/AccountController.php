@@ -6,6 +6,11 @@ use Zend\View\Model\ViewModel;
 
 class AccountController extends AbstractActionController
 {	
+	public function indexAction()
+	{
+		return;
+	}
+	
 	public function loginAction()
     {
         return new ViewModel();
@@ -16,8 +21,8 @@ class AccountController extends AbstractActionController
     	return new ViewModel();
     }
     
-    public function registerAction()
-    {
+    public function registerAction()    
+    {    	
     	return new ViewModel();
     }
     

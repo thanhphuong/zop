@@ -4,6 +4,7 @@ return array(
         'Application',
     		'Account',
     		'Common',
+    		'Map',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
