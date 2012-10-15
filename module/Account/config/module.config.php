@@ -31,4 +31,14 @@ return array(
 	            'account' => __DIR__ . '/../view',
 	        ),
     ),
+	
+	'view_manager' => array(			
+			'template_map' => array(
+					'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
+			//		'account/index/index' => __DIR__ . '/../view/account/index/index.phtml',					
+			),
+			'template_path_stack' => array(
+	            'account' => __DIR__ . '/../view',
+	        ),
+	),
 );

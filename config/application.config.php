@@ -3,8 +3,7 @@ return array(
     'modules' => array(
         'Application',
     		'Account',
-    		'Common',
-    		'Map',
+       		'Map',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(

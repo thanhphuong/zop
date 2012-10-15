@@ -28,7 +28,7 @@
 					<div data-referrer="simple_registration_form">
 						<div class="simple_registration_container" id="simple_registration_container">
 							<div id="reg_box">
-								<form id="reg" name="reg" method="post" action="/account/register">
+								<form id="reg" name="reg" method="post" action="/account/register" onsubmit="return true;">
 									<div class="large_form" id="reg_form_box">
 										<table cellspacing="0" cellpadding="1" class="uiGrid editor">
 											<tbody>
@@ -158,15 +158,7 @@
 														</select>
 													</div>
 												</td>
-											</tr>
-											<tr>
-												<td class="label"></td>
-												<td>
-													<div id="birthday_warning">
-														<a rel="async" title="Click for more information" ajaxify="/help/ajax/reg_birthday" href="#">Why do I need to provide my birthday?</a>
-													</div>
-												</td>
-											</tr>
+											</tr>											
 											<tr>
 												<td class="label"></td>
 												<td>
@@ -179,11 +171,12 @@
 									</table>
 										<div class="reg_btn clearfix">
 											<label for="ujyw3k41" class="uiButton uiButtonSpecial">
-												<input type="submit" id="ujyw3k41" value="<?php echo $this->translate('Sign Up')?>">
+												<input type="submit" id="btnSignUp" value="<?php echo $this->translate('Sign Up')?>">
 											</label>
 										</div>
 									</div>
 								</form>
+								
 								<div class="" id="reg_error" style="opacity: 1; height: auto;">
 									<div id="reg_error_inner">
 										<form>Sorry, it looks like btphuong2345@yahoo.com belongs to an existing account. Would you like to <label class="uiLinkButton"><input type="submit" value="claim this email address"></label>?</form>
