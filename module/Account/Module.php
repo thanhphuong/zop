@@ -1,5 +1,4 @@
 <?php
-// module/Account/Module.php
 namespace Account;
 
 use Account\Model\AccountTable;
