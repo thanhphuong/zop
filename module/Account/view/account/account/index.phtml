@@ -1,4 +1,4 @@
-<?php use Account\SessionNames; ?>
+<?php use Application\SessionNames; ?>
 
 
 <div class="gradient">
@@ -37,51 +37,51 @@
 											<tbody>
 												<tr>
 													<td class="label">
-														<label for="firstname"><?php echo $this->translate('First Name:')?></label>
+														<label><?php echo $this->translate('First Name:')?></label>
 													</td>
 													<td>
 														<div class="field_container">
-															<input type="text" name="firstname" id="firstname" class="inputtext" title="">
+															<input type="text" name="first_name" id="first_name" class="inputtext" title="">
 														</div>
 													</td>
 												</tr>
 												<tr>
 													<td class="label">
-														<label for="lastname"><?php echo $this->translate('Last Name:')?></label>
+														<label><?php echo $this->translate('Last Name:')?></label>
 													</td>
 													<td>
 														<div class="field_container">
-															<input type="text" name="lastname" id="lastname" class="inputtext">
+															<input type="text" name="last_name" id="last_name" class="inputtext">
 														</div>
 													</td>
 												</tr>
 												<tr>
 													<td class="label">
-														<label for="reg_email__"><?php echo $this->translate('Your Email:')?></label>
+														<label><?php echo $this->translate('Your Email:')?></label>
 													</td>
 													<td>
 														<div class="field_container">
-															<input type="text" name="reg_email__" id="reg_email__" class="inputtext">
+															<input type="text" name="email" id="email" class="inputtext">
 														</div>
 													</td>
 												</tr>
 												<tr>
 													<td class="label">
-														<label for="reg_email_confirmation__"><?php echo $this->translate('Re-enter Email:')?></label>
+														<label><?php echo $this->translate('Re-enter Email:')?></label>
 													</td>
 													<td>
 														<div class="field_container">
-															<input type="text" name="reg_email_confirmation__" id="reg_email_confirmation__" class="inputtext">
+															<input type="text" name="email_confirmation" id="email_confirmation" class="inputtext">
 														</div>
 													</td>
 												</tr>
 												<tr>
 													<td class="label">
-														<label for="reg_passwd__"><?php echo $this->translate('New Password:')?></label>
+														<label><?php echo $this->translate('New Password:')?></label>
 													</td>
 													<td>
 														<div class="field_container">
-															<input type="password" value="" name="reg_passwd__" id="reg_passwd__" class="inputtext">
+															<input type="password" value="" name="password" id="password" class="inputtext">
 														</div>
 													</td>																		
 												</tr>
@@ -89,7 +89,7 @@
 													<td class="label"><?php echo $this->translate('I am:')?></td>
 													<td>
 														<div class="field_container">																			
-															<select id="sex" name="sex" class="select">
+															<select id="gender" name="gender" class="select">
 																<option value="0"><?php echo $this->translate('Select Sex:')?></option>
 																<option value="1"><?php echo $this->translate('Female')?></option>
 																<option value="2"><?php echo $this->translate('Male')?></option>

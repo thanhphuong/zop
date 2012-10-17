@@ -1,6 +1,6 @@
 <?php
 
-namespace Account;
+namespace Application;
 
 abstract class Constants{
 	

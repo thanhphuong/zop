@@ -38,5 +38,15 @@ class Account
         $this->last_name = (isset($data['last_name'])) ? $data['last_name'] : null;
         $this->gender = (isset($data['gender'])) ? $data['gender'] : null;
         $this->birthday = (isset($data['birthday'])) ? $data['birthday'] : null;
+        $this->avatar = (isset($data['avatar'])) ? $data['avatar'] : null;
+        $this->status = (isset($data['status'])) ? $data['status'] : null;
+        $this->created_date = (isset($data['created_date'])) ? $data['created_date'] : null;
+        $this->updated_date = (isset($data['updated_date'])) ? $data['updated_date'] : null;        
+    }
+    
+    public function isValid($data)
+    {
+        
+    
     }
 }
