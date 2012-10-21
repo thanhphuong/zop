@@ -183,14 +183,24 @@
 								
 								<?php 
 								session_start();
-								if(isset($_SESSION[SessionNames::ERROR]) && $_SESSION[SessionNames::ERROR]){
+								if(isset($_SESSION[SessionNames::ERROR])){
+                                   $validation = $_SESSION[SessionNames::ERROR];
+                                   $n = $validation->size();
+                                   if ($n > 0) {                                    
 								?>
 								<div class="" id="reg_error" style="opacity: 1; height: auto;">
 									<div id="reg_error_inner">
-										<form>Sorry, it looks like btphuong2345@yahoo.com belongs to an existing account. Would you like to <label class="uiLinkButton"><input type="submit" value="claim this email address"></label>?</form>
+										<form>
+										    <?php 
+										        //just one error
+										       echo $validation->getByPosition(0);
+										    ?>
+										</form>
 									</div>
 								</div>
-								<?php } ?>
+								<?php }
+                                  $validation->removeAll();
+                                 } ?>
 								<div class="tos_container" id="tos_container">
 								</div>
 							</div>

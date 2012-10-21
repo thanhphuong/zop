@@ -39,6 +39,7 @@ class AccountTable extends AbstractTableGateway
     public function saveAccount (Account $account)
     {
         $data = array(
+                'pid' => $account->pid,
                 'email' => $account->email,
                 'phone' => $account->phone,
                 'password' => $account->password,

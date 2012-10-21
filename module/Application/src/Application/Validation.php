@@ -1,13 +1,13 @@
 <?php
 namespace Application;
 
-class Errors
+class Validation
 {
     private $arr_error;
     
     public function __construct()
     {
-        
+        $this->arr_error = array();
     }    
     
     public function size()
@@ -15,12 +15,17 @@ class Errors
         return count($this->arr_error);
     }
     
-    public function get($i)
+    public function getByPosition($i)
     {  
         $n = $this->size();
-        if ($n != null && $i > 0 && $i < $n)      
+        if ($n != null && $i >= 0 && $i < $n)      
             return $this->arr_error[$i];
         return null;
+    }
+    
+    public function getByKey($key)
+    {
+    	return $this->arr_error[$key];
     }
     
     /**
@@ -28,7 +33,7 @@ class Errors
      */
     public function push($error)
     {
-        array_push($this->$arr_error, $error);
+        array_push($this->arr_error, $error);
     }
     
     /**
@@ -36,22 +41,27 @@ class Errors
      */
     public function pop()
     {
-        return array_pop($this->$arr_error);
+        return array_pop($this->arr_error);
     }
     
     /**
      * Prepend one or more elements to the beginning of an array
      */
-    public function push($error)
+    public function unshift($error)
     {
-    	array_unshift($this->$arr_error, $error);
+    	array_unshift($this->arr_error, $error);
     }
     
     /**
      * Shift an element off the beginning of array
      */
-    public function pop()
+    public function shift()
     {
-    	return array_shift($this->$arr_error);
+    	return array_shift($this->arr_error);
+    }
+    
+    public function removeAll()
+    {
+        unset($this->arr_error);
     }
 }

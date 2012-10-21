@@ -6,6 +6,8 @@ class Account
 
     public $id;
 
+    public $pid;
+
     public $email;
 
     public $phone;
@@ -28,9 +30,10 @@ class Account
 
     public $updated_date;
 
-    public function exchangeArray ($data)
+    public function exchangeArray($data)
     {
         $this->id = (isset($data['id'])) ? $data['id'] : null;
+        $this->pid = (isset($data['pid'])) ? $data['pid'] : null;
         $this->email = (isset($data['email'])) ? $data['email'] : null;
         $this->phone = (isset($data['phone'])) ? $data['phone'] : null;
         $this->password = (isset($data['password'])) ? $data['password'] : null;
@@ -41,12 +44,7 @@ class Account
         $this->avatar = (isset($data['avatar'])) ? $data['avatar'] : null;
         $this->status = (isset($data['status'])) ? $data['status'] : null;
         $this->created_date = (isset($data['created_date'])) ? $data['created_date'] : null;
-        $this->updated_date = (isset($data['updated_date'])) ? $data['updated_date'] : null;        
+        $this->updated_date = (isset($data['updated_date'])) ? $data['updated_date'] : null;
     }
     
-    public function isValid($data)
-    {
-        
-    
-    }
 }
