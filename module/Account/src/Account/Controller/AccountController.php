@@ -1,5 +1,11 @@
 <?php
 namespace Account\Controller;
+use Application\Constants;
+
+use Application\Service;
+
+use Application\Utils;
+
 use Account\Model\Account;
 use Zend\View\Helper\Layout;
 use Zend\Mvc\View\Console\ViewManager;
@@ -48,18 +54,14 @@ class AccountController extends AbstractActionController
 
     private function isValid ()
     {
-        $translate = $this->getServiceLocator()
-            ->get('viewmanager')
-            ->getRenderer()
-            ->plugin('translate');
+        $service = new Service(); 
+        $translate = $service->getTranslate($this);
         $inputFilter = new InputFilter();
-        $validation = new Validation();
+        $validation = new Validation();        
         
-        session_start();
         if ($inputFilter->checkEmpty($this->email)) {
-            $validation->push(
-                    $translate("You must fill in all of the fields."));
-            $_SESSION[SessionNames::ERROR] = $validation;
+            $validation->setByKey(Validation::SUMMARY_VALIDATION, $translate("You must fill in all of the fields."));
+            $service->setValidation(SessionNames::ERROR, $validation);
             return false;
         }
     }

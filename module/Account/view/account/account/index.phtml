@@ -1,4 +1,8 @@
-<?php use Application\SessionNames; ?>
+<?php use Application\Service;
+
+use Application\Validation;
+
+use Application\SessionNames; ?>
 
 
 <div class="gradient">
@@ -182,25 +186,26 @@
 								
 								
 								<?php 
-								session_start();
-								if(isset($_SESSION[SessionNames::ERROR])){
-                                   $validation = $_SESSION[SessionNames::ERROR];
-                                   $n = $validation->size();
-                                   if ($n > 0) {                                    
+								   $service = new Service(); 
+                                   $validation = $service->getValidation(SessionNames::ERROR);                                   
+                                   
+                                   if ($validation->getByKey(Validation::SUMMARY_VALIDATION) != "") {                                    
 								?>
 								<div class="" id="reg_error" style="opacity: 1; height: auto;">
 									<div id="reg_error_inner">
 										<form>
 										    <?php 
 										        //just one error
-										       echo $validation->getByPosition(0);
+										       echo $validation->getByKey(Validation::SUMMARY_VALIDATION);
 										    ?>
 										</form>
 									</div>
 								</div>
-								<?php }
-                                  $validation->removeAll();
-                                 } ?>
+								<?php 
+								        $service->setValidation(SessionNames::ERROR, null);
+                                    }
+                                 
+                                  ?>
 								<div class="tos_container" id="tos_container">
 								</div>
 							</div>
