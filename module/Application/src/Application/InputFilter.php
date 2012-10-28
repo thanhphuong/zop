@@ -22,7 +22,7 @@ class InputFilter
     
     public function checkStringLength($value, $min, $max)
     {
-        $length = strlen($value);
+        $length = strlen($value);  
         if ($length < $min || $length > $max)
             return false;
         return true;

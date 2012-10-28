@@ -1,5 +1,6 @@
 <?php
 namespace Account\Model;
+use Zend\Db\Sql\Select;
 use Zend\Db\Adapter\Adapter;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\AbstractTableGateway;
@@ -21,6 +22,19 @@ class AccountTable extends AbstractTableGateway
     {
         $resultSet = $this->select();
         return $resultSet;
+    }
+
+    public function checkEmailExists ($email)
+    {
+        $rowset = $this->select(
+                array(
+                        'email' => $email
+                ));
+        $row = $rowset->current();
+        if (! $row) {
+            return FALSE;
+        }
+        return TRUE;
     }
 
     public function getAccount ($id)
@@ -50,7 +64,7 @@ class AccountTable extends AbstractTableGateway
                 'avatar' => $account->avatar,
                 'status' => $account->status,
                 'created_date' => $account->created_date,
-                'pdated_date' => $account->pdated_date
+                'updated_date' => $account->updated_date
         );
         $id = (int) $account->id;
         if ($id == 0) {

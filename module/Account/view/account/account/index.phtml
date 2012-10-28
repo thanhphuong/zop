@@ -35,6 +35,10 @@ use Application\SessionNames; ?>
 					<div data-referrer="simple_registration_form">
 						<div class="simple_registration_container" id="simple_registration_container">
 							<div id="reg_box">
+							    <?php
+							        session_start(); 
+							        $post = isset($_SESSION[SessionNames::ERROR_REGISTER_ACCOUNT]) ? $_SESSION[SessionNames::ERROR_REGISTER_ACCOUNT] : null;							        
+							    ?>
 								<form id="reg" name="reg" method="post" action="/account/register" onsubmit="return true;">
 									<div class="large_form" id="reg_form_box">
 										<table cellspacing="0" cellpadding="1" class="uiGrid editor">
@@ -45,7 +49,7 @@ use Application\SessionNames; ?>
 													</td>
 													<td>
 														<div class="field_container">
-															<input type="text" name="first_name" id="first_name" class="inputtext" title="">
+															<input maxlength="30" value="<?php echo ($post!=null) ? $post['first_name']:'' ?>" type="text" name="first_name" id="first_name" class="inputtext" title="">
 														</div>
 													</td>
 												</tr>
@@ -55,7 +59,7 @@ use Application\SessionNames; ?>
 													</td>
 													<td>
 														<div class="field_container">
-															<input type="text" name="last_name" id="last_name" class="inputtext">
+															<input maxlength="30" value="<?php echo ($post!=null) ? $post['last_name']:'' ?>" type="text" name="last_name" id="last_name" class="inputtext">
 														</div>
 													</td>
 												</tr>
@@ -65,7 +69,7 @@ use Application\SessionNames; ?>
 													</td>
 													<td>
 														<div class="field_container">
-															<input type="text" name="email" id="email" class="inputtext">
+															<input maxlength="200" value="<?php echo ($post!=null) ? $post['email']:'' ?>" type="text" name="email" id="email" class="inputtext">
 														</div>
 													</td>
 												</tr>
@@ -75,7 +79,7 @@ use Application\SessionNames; ?>
 													</td>
 													<td>
 														<div class="field_container">
-															<input type="text" name="email_confirmation" id="email_confirmation" class="inputtext">
+															<input maxlength="200" value="<?php echo ($post!=null) ? $post['email_confirmation']:'' ?>" type="text" name="email_confirmation" id="email_confirmation" class="inputtext">
 														</div>
 													</td>
 												</tr>
@@ -85,7 +89,7 @@ use Application\SessionNames; ?>
 													</td>
 													<td>
 														<div class="field_container">
-															<input type="password" value="" name="password" id="password" class="inputtext">
+															<input maxlength="30" type="password" value="" name="password" id="password" class="inputtext">
 														</div>
 													</td>																		
 												</tr>
@@ -94,9 +98,9 @@ use Application\SessionNames; ?>
 													<td>
 														<div class="field_container">																			
 															<select id="gender" name="gender" class="select">
-																<option value="0"><?php echo $this->translate('Select Sex:')?></option>
-																<option value="1"><?php echo $this->translate('Female')?></option>
-																<option value="2"><?php echo $this->translate('Male')?></option>
+																<option value="0" <?php echo ($post==null) ? "selected='selected'":'' ?>><?php echo $this->translate('Select Sex:')?></option>
+																<option value="1" <?php echo ($post!=null && $post['gender']==1) ? "selected='selected'":' ' ?>><?php echo $this->translate('Female')?></option>
+																<option value="2" <?php echo ($post!=null && $post['gender']==2) ? "selected='selected'":' ' ?>><?php echo $this->translate('Male')?></option>
 															</select>
 														</div>
 													</td>
@@ -106,60 +110,41 @@ use Application\SessionNames; ?>
 													<td>
 														<div class="field_container">
 														<select class="" id="birthday_month"  onchange="selectMonth()" name="birthday_month">
-															<option value="-1"><?php echo $this->translate('Month:')?></option>
-															<option value="1"><?php echo $this->translate('Jan')?></option>
-															<option value="2"><?php echo $this->translate('Feb')?></option>
-															<option value="3"><?php echo $this->translate('Mar')?></option>
-															<option value="4"><?php echo $this->translate('Apr')?></option>
-															<option value="5"><?php echo $this->translate('May')?></option>
-															<option value="6"><?php echo $this->translate('Jun')?></option>
-															<option value="7"><?php echo $this->translate('Jul')?></option>
-															<option value="8"><?php echo $this->translate('Aug')?></option>
-															<option value="9"><?php echo $this->translate('Sep')?></option>
-															<option value="10"><?php echo $this->translate('Oct')?></option>
-															<option value="11"><?php echo $this->translate('Nov')?></option>
-															<option value="12"><?php echo $this->translate('Dec')?></option>
+															<option value="-1" <?php echo ($post==null) ? "selected='selected'":'' ?>><?php echo $this->translate('Month:')?></option>
+															<option value="1" <?php echo ($post!=null && $post['birthday_month']==1) ? "selected='selected'":' ' ?>><?php echo $this->translate('Jan')?></option>
+															<option value="2" <?php echo ($post!=null && $post['birthday_month']==2) ? "selected='selected'":' ' ?>><?php echo $this->translate('Feb')?></option>
+															<option value="3" <?php echo ($post!=null && $post['birthday_month']==3) ? "selected='selected'":' ' ?>><?php echo $this->translate('Mar')?></option>
+															<option value="4" <?php echo ($post!=null && $post['birthday_month']==4) ? "selected='selected'":' ' ?>><?php echo $this->translate('Apr')?></option>
+															<option value="5" <?php echo ($post!=null && $post['birthday_month']==5) ? "selected='selected'":' ' ?>><?php echo $this->translate('May')?></option>
+															<option value="6" <?php echo ($post!=null && $post['birthday_month']==6) ? "selected='selected'":' ' ?>><?php echo $this->translate('Jun')?></option>
+															<option value="7" <?php echo ($post!=null && $post['birthday_month']==7) ? "selected='selected'":' ' ?>><?php echo $this->translate('Jul')?></option>
+															<option value="8" <?php echo ($post!=null && $post['birthday_month']==8) ? "selected='selected'":' ' ?>><?php echo $this->translate('Aug')?></option>
+															<option value="9" <?php echo ($post!=null && $post['birthday_month']==9) ? "selected='selected'":' ' ?>><?php echo $this->translate('Sep')?></option>
+															<option value="10" <?php echo ($post!=null && $post['birthday_month']==10) ? "selected='selected'":' ' ?>><?php echo $this->translate('Oct')?></option>
+															<option value="11" <?php echo ($post!=null && $post['birthday_month']==11) ? "selected='selected'":' ' ?>><?php echo $this->translate('Nov')?></option>
+															<option value="12" <?php echo ($post!=null && $post['birthday_month']==12) ? "selected='selected'":' ' ?>><?php echo $this->translate('Dec')?></option>
 														</select> 
 														<select class="" id="birthday_day" name="birthday_day">
-															<option value="-1"><?php echo $this->translate('Day:')?></option>
-															<option value="1">1</option>
-															<option value="2">2</option>
-															<option value="3">3</option>
-															<option value="4">4</option>
-															<option value="5">5</option>
-															<option value="6">6</option>
-															<option value="7">7</option>
-															<option value="8">8</option>
-															<option value="9">9</option>
-															<option value="10">10</option>
-															<option value="11">11</option>
-															<option value="12">12</option>
-															<option value="13">13</option>
-															<option value="14">14</option>
-															<option value="15">15</option>
-															<option value="16">16</option>
-															<option value="17">17</option>
-															<option value="18">18</option>
-															<option value="19">19</option>
-															<option value="20">20</option>
-															<option value="21">21</option>
-															<option value="22">22</option>
-															<option value="23">23</option>
-															<option value="24">24</option>
-															<option value="25">25</option>
-															<option value="26">26</option>
-															<option value="27">27</option>
-															<option value="28">28</option>
-															<option value="29">29</option>
-															<option value="30">30</option>
-															<option value="31">31</option>
+															<option value="-1" <?php echo ($post==null) ? "selected='selected'":'' ?>><?php echo $this->translate('Day:')?></option>
+															<?php																
+																for ($i = 1; $i <= 31; $i++){
+                                                                    if ($post!=null && $post['birthday_day']==$i)
+                                                                    	echo "<option selected='selected' value=\"" . $i . "\">" . $i . "</option>";
+                                                                    else
+                                                                    	echo "<option value=\"" . $i . "\">" . $i . "</option>";
+																}										 
+															?>	
+															
 														</select>
 														<select id="birthday_year" onchange="selectYear()" name="birthday_year">
-															<option value="-1">Year:</option>
+															<option value="-1" <?php echo ($post==null) ? "selected='selected'":'' ?>>Year:</option>
 															<?php
 																$year = date("Y");
 																for ($i = $year; $i >= $year - 120; $i--){
-																	echo "<option value=\"" . $i . "\">" . $i . "</option>";				
+																	if ($post!=null && $post['birthday_year']==$i)
+																	    echo "<option selected='selected' value=\"" . $i . "\">" . $i . "</option>";                                                                    	
+                                                                    else
+                                                                        echo "<option value=\"" . $i . "\">" . $i . "</option>";
 																}										 
 															?>															
 														</select>
@@ -181,11 +166,12 @@ use Application\SessionNames; ?>
 												<input type="submit" id="btnSignUp" value="<?php echo $this->translate('Sign Up')?>">
 											</label>
 										</div>
-									</div>
+									</div>	
+									<?php unset($_SESSION[SessionNames::ERROR_REGISTER_ACCOUNT]);?>								
 								</form>
 								
 								
-								<?php 
+								<?php 								    
 								   $service = new Service(); 
                                    $validation = $service->getValidation(SessionNames::ERROR);                                   
                                    
