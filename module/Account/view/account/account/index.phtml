@@ -37,7 +37,7 @@ use Application\SessionNames; ?>
 							<div id="reg_box">
 							    <?php
 							        session_start(); 
-							        $post = isset($_SESSION[SessionNames::ERROR_REGISTER_ACCOUNT]) ? $_SESSION[SessionNames::ERROR_REGISTER_ACCOUNT] : null;							        
+							        $post = isset($_SESSION[SessionNames::ERROR_FORM]) ? $_SESSION[SessionNames::ERROR_FORM] : null;							        
 							    ?>
 								<form id="reg" name="reg" method="post" action="/account/register" onsubmit="return true;">
 									<div class="large_form" id="reg_form_box">
@@ -167,7 +167,7 @@ use Application\SessionNames; ?>
 											</label>
 										</div>
 									</div>	
-									<?php unset($_SESSION[SessionNames::ERROR_REGISTER_ACCOUNT]);?>								
+									<?php unset($_SESSION[SessionNames::ERROR_FORM]);?>								
 								</form>
 								
 								

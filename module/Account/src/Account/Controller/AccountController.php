@@ -1,5 +1,7 @@
 <?php
 namespace Account\Controller;
+use Application\Mailer;
+
 use Application\Service;
 use Application\Constants;
 use Account\Model\Account;
@@ -27,6 +29,8 @@ class AccountController extends AbstractActionController
 
     public function indexAction ()
     {
+    	$mailer = new Mailer();
+    	$mailer->sendMail();
         return new ViewModel();
     }
 
@@ -53,7 +57,7 @@ class AccountController extends AbstractActionController
                 return $this->redirect()->toRoute('map');
             }
             session_start();
-            $_SESSION[SessionNames::ERROR_REGISTER_ACCOUNT] = $request->getPost();
+            $_SESSION[SessionNames::ERROR_FORM] = $request->getPost();
         }        
         
         return $this->redirect()->toRoute('account');
