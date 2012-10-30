@@ -37,7 +37,7 @@ class AccountTable extends AbstractTableGateway
         return TRUE;
     }
 
-    public function getAccount ($id)
+    public function getAccountById ($id)
     {
         $id = (int) $id;
         $rowset = $this->select(array(
@@ -49,6 +49,30 @@ class AccountTable extends AbstractTableGateway
         }
         return $row;
     }
+    
+    public function getAccountByEmail ($email)
+    {     	
+    	$rowset = $this->select(array(
+    			'email' => $email
+    	));
+    	$row = $rowset->current();    	
+    	if (! $row) {
+    		throw new \Exception("Could not find row $email");
+    	}    	
+    	return $row;
+    }
+    
+    public function getAccountByPhone ($phone)
+    {    	
+    	$rowset = $this->select(array(
+    			'phone' => $phone
+    	));
+    	$row = $rowset->current();
+    	if (! $row) {
+    		throw new \Exception("Could not find row $phone");
+    	}
+    	return $row;
+    }
 
     public function saveAccount (Account $account)
     {
@@ -57,6 +81,7 @@ class AccountTable extends AbstractTableGateway
                 'email' => $account->email,
                 'phone' => $account->phone,
                 'password' => $account->password,
+                'full_name' => $account->full_name,
                 'first_name' => $account->first_name,
                 'last_name' => $account->last_name,
                 'gender' => $account->gender,

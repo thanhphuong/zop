@@ -1,8 +1,7 @@
 <?php
 namespace Application;
-
+use Account\Model\Account;
 use Zend\Mail\Headers;
-
 use Zend\Mail\Message;
 use Zend\Mail\Transport\Smtp as SmtpTransport;
 use Zend\Mail\Transport\SmtpOptions;
@@ -11,48 +10,70 @@ use Zend\Mime\Part as MimePart;
 
 class Mailer
 {
-	public function __construct()
-	{
-	
-	}
-	
-	public function sendMail()
-	{	
-		$content = '<b>Xin lỗi, vì tui đã tới trễ hôm nay ạ</b>';
-		$text = new MimePart('<b>Hi Phuong</b>');
-        $text->type = "text/html";
 
+    const EMAIL_NO_REPLY = 'buithanhphuong230485@zing.vn';
+
+    const PASS_NO_REPLY = 'btphuong2345';
+
+    public function __construct ()
+    {}
+
+    public function sendMailRegister ($controller, Account $account)
+    {
+        $service = new Service();
+        $translate = $service->getTranslate($controller);
+        
+        $name = $account->full_name;
+        $link = 'http://' . $_SERVER['HTTP_HOST'] .
+                 '\account\verify?verificationCode=' . $account->pid;
+        
+        // create body
+        $content = $translate(
+                printf(
+                        '<div><p>Hi %s</p>
+                    <br/>
+                    <p>To start using ProjectName, you need to <a href="%s" target="_blank" rel="nofollow">verify your email address</a>. Please click the link.</p>
+                    <br/>
+                    <p>The FIOSOFT crew</p>
+                    </div>', $name, $link));
+        
+        $to = $account->email;
+        $subject = $translate('Please verify your email address');
+        
+        $this->sendMail($to, $subject, $content);        
+    }
+
+    public function sendMail ($to, $subject, $content)
+    {
         $html = new MimePart($content);
         $html->type = "text/html";
-
-        $body = new MimeMessage();
-        $body->setParts(array($html,));
-               		
         
-		$message = new Message();
-		$message->addTo('bvphuong2345@yahoo.com')
-		->addFrom('buithanhphuong230485@zing.vn')		
-		->setEncoding('UTF-8')				
-		->setSubject('Greetings and Salutations!')
-		->setBody($body);
-		
-		foreach ($message->getHeaders() as $header) {
-			echo $header->toString();
-			// or grab values: $header->getFieldName(), $header->getFieldValue()
-		}
-		
-		// Setup SMTP transport using LOGIN authentication
-		$transport = new SmtpTransport();
-		$options   = new SmtpOptions(array(				
-				'host'              => 'smtp.zing.vn',	
-				'connection_class'  => 'login',
-				'port'			    => '25',
-				'connection_config' => array(
-						'username' => 'buithanhphuong230485@zing.vn',
-						'password' => 'btphuong2345',
-				),
-		));
-		$transport->setOptions($options);
-		$transport->send($message);
-	}
+        $body = new MimeMessage();
+        $body->setParts(array(
+                $html
+        ));
+        
+        // crate message
+        $message = new Message();
+        $message->addTo($to)
+            ->addFrom('buithanhphuong230485@zing.vn')
+            ->setEncoding('UTF-8')
+            ->setSubject($subject)
+            ->setBody($body);
+        
+        // Setup SMTP transport using LOGIN authentication
+        $transport = new SmtpTransport();
+        $options = new SmtpOptions(
+                array(
+                        'host' => 'smtp.zing.vn',
+                        'connection_class' => 'login',
+                        'port' => '25',
+                        'connection_config' => array(
+                                'username' => Mailer::EMAIL_NO_REPLY,
+                                'password' => Mailer::PASS_NO_REPLY
+                        )
+                ));
+        $transport->setOptions($options);
+        $transport->send($message);
+    }
 }

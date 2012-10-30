@@ -28,9 +28,7 @@ class AccountController extends AbstractActionController
     }
 
     public function indexAction ()
-    {
-    	$mailer = new Mailer();
-    	$mailer->sendMail();
+    {    	
         return new ViewModel();
     }
 
@@ -54,7 +52,16 @@ class AccountController extends AbstractActionController
             
             if ($this->isValidRegister($request->getPost())) {                
                 $this->getAccountTable()->saveAccount($account);
-                return $this->redirect()->toRoute('map');
+                
+                //verify email
+                $row = $this->getAccountTable()->getAccountByEmail($account->email);                
+                $account->pid = rand(12345, 99999);                
+                
+                $this->getAccountTable()->saveAccount($account);
+                $mailer = new Mailer();
+                $mailer ->sendMailRegister($this, $account);
+                
+                //return $this->redirect()->toRoute('map');
             }
             session_start();
             $_SESSION[SessionNames::ERROR_FORM] = $request->getPost();
@@ -68,6 +75,7 @@ class AccountController extends AbstractActionController
         return new ViewModel();
     }
 
+    
     private function isValidRegister ($data)
     {
         $service = new Service();
