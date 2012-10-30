@@ -1,9 +1,13 @@
 <?php
 namespace Application;
 
+use Zend\Mail\Headers;
+
 use Zend\Mail\Message;
 use Zend\Mail\Transport\Smtp as SmtpTransport;
 use Zend\Mail\Transport\SmtpOptions;
+use Zend\Mime\Message as MimeMessage;
+use Zend\Mime\Part as MimePart;
 
 class Mailer
 {
@@ -14,11 +18,28 @@ class Mailer
 	
 	public function sendMail()
 	{	
+		$content = '<b>Xin lỗi, vì tui đã tới trễ hôm nay ạ</b>';
+		$text = new MimePart('<b>Hi Phuong</b>');
+        $text->type = "text/html";
+
+        $html = new MimePart($content);
+        $html->type = "text/html";
+
+        $body = new MimeMessage();
+        $body->setParts(array($html,));
+               		
+        
 		$message = new Message();
-		$message->addTo('btphuong2345@yahoo.com')
-		->addFrom('buithanhphuong230485@zing.vn')
+		$message->addTo('bvphuong2345@yahoo.com')
+		->addFrom('buithanhphuong230485@zing.vn')		
+		->setEncoding('UTF-8')				
 		->setSubject('Greetings and Salutations!')
-		->setBody("Sorry, I'm going to be late today!");
+		->setBody($body);
+		
+		foreach ($message->getHeaders() as $header) {
+			echo $header->toString();
+			// or grab values: $header->getFieldName(), $header->getFieldValue()
+		}
 		
 		// Setup SMTP transport using LOGIN authentication
 		$transport = new SmtpTransport();
