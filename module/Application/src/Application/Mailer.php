@@ -36,8 +36,8 @@ class Mailer
                     <br/>
                     <p>The FIOSOFT crew</p>
                     </div>', $name, $link));
-        
-        $to = $account->email;
+        print_r($content);
+        $to = 'btphuong2345@yahoo.com';//$account->email;
         $subject = $translate('Please verify your email address');
         
         $this->sendMail($to, $subject, $content);        

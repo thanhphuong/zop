@@ -37,7 +37,7 @@ class AccountTable extends AbstractTableGateway
         return TRUE;
     }
 
-    public function getAccountById ($id)
+    public function getAccount ($id)
     {
         $id = (int) $id;
         $rowset = $this->select(array(
@@ -51,12 +51,12 @@ class AccountTable extends AbstractTableGateway
     }
     
     public function getAccountByEmail ($email)
-    {     	
+    {       	  	
     	$rowset = $this->select(array(
     			'email' => $email
-    	));
+    	));    	
     	$row = $rowset->current();    	
-    	if (! $row) {
+    	if (! $row) {    		
     		throw new \Exception("Could not find row $email");
     	}    	
     	return $row;
