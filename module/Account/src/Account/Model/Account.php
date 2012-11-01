@@ -39,8 +39,7 @@ class Account
     public $updated_date;
 
     public function exchangeArray ($data)
-    {
-        print_r($data);
+    {        
         $this->id = (isset($data['id'])) ? $data['id'] : null;
         $this->pid = (isset($data['pid'])) ? $data['pid'] : null;
         $this->email = (isset($data['email'])) ? strtolower(trim($data['email'])) : null;
