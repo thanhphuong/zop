@@ -4,204 +4,234 @@ use Application\Validation;
 
 use Application\SessionNames; ?>
 
-
-<div class="gradient">
-	<div class="gradientContent">
-		<div class="clearfix fbIndexFeaturedRegistration">
-		
-<!-- Panel Left -->
-			<div class="feature lfloat">
-				<div class="clearfix fbIndexMobile">
-					<a rel="dialog" href="#" tabindex="-1" class="lfloat">
-						<img width="97" height="205" alt="" src="<?php echo $this->basePath() . "/images/phone.png" ?>" class="mtm phoneImage img">
-					</a>
-					<div class="clearfix rightSide rfloat">
-						<div class="lfloat">
-							<div class="title fsl fwb fcb">Heading out? Stay connected</div>
-							<div class="subtitle fsm fwn fcg">Visit facebook.com on your mobile phone.</div>
-						</div>
-						<a rel="dialog" href="#" class="mrl mobileButton rfloat uiButton">
-							<span class="uiButtonText">Get Facebook Mobile</span></a>
-					</div>
-				</div>
-			</div>	
-<!-- Panel Right -->
-			<div class="signupForm rfloat">
-				<div class="mbm phm headerTextContainer">
-					<div class="mbs mainTitle fsl fwb fcb"><?php echo $this->translate('Sign Up')?></div>
-					<div class="mbm subtitle fsm fwn fcg"><?php echo $this->translate('It&apos;s free and always will be.')?></div>
-				</div>
-				<div id="registration_container">
-					<div data-referrer="simple_registration_form">
-						<div class="simple_registration_container" id="simple_registration_container">
-							<div id="reg_box">
-							    <?php
-							        session_start(); 
-							        $post = isset($_SESSION[SessionNames::ERROR_FORM]) ? $_SESSION[SessionNames::ERROR_FORM] : null;							        
-							    ?>
-								<form id="reg" name="reg" method="post" action="/account/register" onsubmit="return true;">
-									<div class="large_form" id="reg_form_box">
-										<table cellspacing="0" cellpadding="1" class="uiGrid editor">
-											<tbody>
-												<tr>
-													<td class="label">
-														<label><?php echo $this->translate('First Name:')?></label>
-													</td>
-													<td>
-														<div class="field_container">
-															<input maxlength="30" value="<?php echo ($post!=null) ? $post['first_name']:'' ?>" type="text" name="first_name" id="first_name" class="inputtext" title="">
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td class="label">
-														<label><?php echo $this->translate('Last Name:')?></label>
-													</td>
-													<td>
-														<div class="field_container">
-															<input maxlength="30" value="<?php echo ($post!=null) ? $post['last_name']:'' ?>" type="text" name="last_name" id="last_name" class="inputtext">
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td class="label">
-														<label><?php echo $this->translate('Your Email:')?></label>
-													</td>
-													<td>
-														<div class="field_container">
-															<input maxlength="200" value="<?php echo ($post!=null) ? $post['email']:'' ?>" type="text" name="email" id="email" class="inputtext">
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td class="label">
-														<label><?php echo $this->translate('Re-enter Email:')?></label>
-													</td>
-													<td>
-														<div class="field_container">
-															<input maxlength="200" value="<?php echo ($post!=null) ? $post['email_confirmation']:'' ?>" type="text" name="email_confirmation" id="email_confirmation" class="inputtext">
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td class="label">
-														<label><?php echo $this->translate('New Password:')?></label>
-													</td>
-													<td>
-														<div class="field_container">
-															<input maxlength="30" type="password" value="" name="password" id="password" class="inputtext">
-														</div>
-													</td>																		
-												</tr>
-												<tr>
-													<td class="label"><?php echo $this->translate('I am:')?></td>
-													<td>
-														<div class="field_container">																			
-															<select id="gender" name="gender" class="select">
-																<option value="0" <?php echo ($post==null) ? "selected='selected'":'' ?>><?php echo $this->translate('Select Sex:')?></option>
-																<option value="1" <?php echo ($post!=null && $post['gender']==1) ? "selected='selected'":' ' ?>><?php echo $this->translate('Female')?></option>
-																<option value="2" <?php echo ($post!=null && $post['gender']==2) ? "selected='selected'":' ' ?>><?php echo $this->translate('Male')?></option>
-															</select>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td class="label"><?php echo $this->translate('Birthday:')?></td>
-													<td>
-														<div class="field_container">
-														<select class="" id="birthday_month"  onchange="selectMonth()" name="birthday_month">
-															<option value="-1" <?php echo ($post==null) ? "selected='selected'":'' ?>><?php echo $this->translate('Month:')?></option>
-															<option value="1" <?php echo ($post!=null && $post['birthday_month']==1) ? "selected='selected'":' ' ?>><?php echo $this->translate('Jan')?></option>
-															<option value="2" <?php echo ($post!=null && $post['birthday_month']==2) ? "selected='selected'":' ' ?>><?php echo $this->translate('Feb')?></option>
-															<option value="3" <?php echo ($post!=null && $post['birthday_month']==3) ? "selected='selected'":' ' ?>><?php echo $this->translate('Mar')?></option>
-															<option value="4" <?php echo ($post!=null && $post['birthday_month']==4) ? "selected='selected'":' ' ?>><?php echo $this->translate('Apr')?></option>
-															<option value="5" <?php echo ($post!=null && $post['birthday_month']==5) ? "selected='selected'":' ' ?>><?php echo $this->translate('May')?></option>
-															<option value="6" <?php echo ($post!=null && $post['birthday_month']==6) ? "selected='selected'":' ' ?>><?php echo $this->translate('Jun')?></option>
-															<option value="7" <?php echo ($post!=null && $post['birthday_month']==7) ? "selected='selected'":' ' ?>><?php echo $this->translate('Jul')?></option>
-															<option value="8" <?php echo ($post!=null && $post['birthday_month']==8) ? "selected='selected'":' ' ?>><?php echo $this->translate('Aug')?></option>
-															<option value="9" <?php echo ($post!=null && $post['birthday_month']==9) ? "selected='selected'":' ' ?>><?php echo $this->translate('Sep')?></option>
-															<option value="10" <?php echo ($post!=null && $post['birthday_month']==10) ? "selected='selected'":' ' ?>><?php echo $this->translate('Oct')?></option>
-															<option value="11" <?php echo ($post!=null && $post['birthday_month']==11) ? "selected='selected'":' ' ?>><?php echo $this->translate('Nov')?></option>
-															<option value="12" <?php echo ($post!=null && $post['birthday_month']==12) ? "selected='selected'":' ' ?>><?php echo $this->translate('Dec')?></option>
-														</select> 
-														<select class="" id="birthday_day" name="birthday_day">
-															<option value="-1" <?php echo ($post==null) ? "selected='selected'":'' ?>><?php echo $this->translate('Day:')?></option>
-															<?php																
-																for ($i = 1; $i <= 31; $i++){
-                                                                    if ($post!=null && $post['birthday_day']==$i)
-                                                                    	echo "<option selected='selected' value=\"" . $i . "\">" . $i . "</option>";
-                                                                    else
-                                                                    	echo "<option value=\"" . $i . "\">" . $i . "</option>";
-																}										 
-															?>	
-															
-														</select>
-														<select id="birthday_year" onchange="selectYear()" name="birthday_year">
-															<option value="-1" <?php echo ($post==null) ? "selected='selected'":'' ?>>Year:</option>
-															<?php
-																$year = date("Y");
-																for ($i = $year; $i >= $year - 120; $i--){
-																	if ($post!=null && $post['birthday_year']==$i)
-																	    echo "<option selected='selected' value=\"" . $i . "\">" . $i . "</option>";                                                                    	
-                                                                    else
-                                                                        echo "<option value=\"" . $i . "\">" . $i . "</option>";
-																}										 
-															?>															
-														</select>
-													</div>
-												</td>
-											</tr>											
-											<tr>
-												<td class="label"></td>
-												<td>
-													<div id="ppt_container" class="fbRegistrationPPT">
-														<p class="privacy_policy_text text"><?php echo $this->translate('By clicking Sign Up, you agree to our')?> <a rel="nofollow" target="_blank" href="/terms.php">Terms</a> and that you have read our <a rel="nofollow" target="_blank" href="/policy.php">Data Use Policy</a>, including our <a rel="nofollow" target="_blank" href="/help/cookies/">Cookie Use</a>.</p>
-													</div>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-										<div class="reg_btn clearfix">
-											<label for="ujyw3k41" class="uiButton uiButtonSpecial">
-												<input type="submit" id="btnSignUp" value="<?php echo $this->translate('Sign Up')?>">
-											</label>
-										</div>
-									</div>	
-									<?php unset($_SESSION[SessionNames::ERROR_FORM]);?>								
-								</form>
-								
-								
-								<?php 								    
-								   $service = new Service(); 
-                                   $validation = $service->getValidation(SessionNames::ERROR);                                   
-                                   
-                                   if ($validation->getByKey(Validation::SUMMARY_VALIDATION) != "") {                                    
-								?>
-								<div class="" id="reg_error" style="opacity: 1; height: auto;">
-									<div id="reg_error_inner">
-										<form>
-										    <?php 
-										        //just one error
-										       echo $validation->getByKey(Validation::SUMMARY_VALIDATION);
-										    ?>
-										</form>
-									</div>
-								</div>
-								<?php 
-								        $service->setValidation(SessionNames::ERROR, null);
-                                    }
-                                 
-                                  ?>
-								<div class="tos_container" id="tos_container">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+<!-- Header -->
+	  	<div data-referrer="pagelet_bluebar" id="pagelet_bluebar">
+	  		<div id="blueBarHolder">
+	  			<div id="blueBar">
+	  				<div class="loggedout_menubar_container">
+		  				<div class="clearfix loggedout_menubar">
+		  					<a title="<?php echo $this->translate('Go to ProjectName Home')?>" href="/" class="lfloat">
+		  						<i class="fb_logo img sp_1zq7t7 sx_082ee8"><u><?php echo $this->translate('ProjectName logo')?></u></i>
+		  					</a>
+			  				<div class="rfloat">
+			  	<!-- Login form -->
+				  				<?php echo $this->render('layout/login.phtml') ?>	
+			  				</div>
+		  				</div>
+	  				</div>
+	  			</div>
+	 		</div>
 		</div>
-	</div>
-</div>
+		
+		<div class="uiContextualLayerParent" id="globalContainer">
+			
+			<div class="fb_content clearfix" id="content">
+                <div>
+                    <div class="gradient">
+                    	<div class="gradientContent">
+                    		<div class="clearfix fbIndexFeaturedRegistration">
+                    		
+                    <!-- Panel Left -->
+                    			<div class="feature lfloat">
+                    				<div class="clearfix fbIndexMobile">
+                    					<a rel="dialog" href="#" tabindex="-1" class="lfloat">
+                    						<img width="97" height="205" alt="" src="<?php echo $this->basePath() . "/images/phone.png" ?>" class="mtm phoneImage img">
+                    					</a>
+                    					<div class="clearfix rightSide rfloat">
+                    						<div class="lfloat">
+                    							<div class="title fsl fwb fcb">Heading out? Stay connected</div>
+                    							<div class="subtitle fsm fwn fcg">Visit facebook.com on your mobile phone.</div>
+                    						</div>
+                    						<a rel="dialog" href="#" class="mrl mobileButton rfloat uiButton">
+                    							<span class="uiButtonText">Get Facebook Mobile</span></a>
+                    					</div>
+                    				</div>
+                    			</div>	
+                    <!-- Panel Right -->
+                    			<div class="signupForm rfloat">
+                    				<div class="mbm phm headerTextContainer">
+                    					<div class="mbs mainTitle fsl fwb fcb"><?php echo $this->translate('Sign Up')?></div>
+                    					<div class="mbm subtitle fsm fwn fcg"><?php echo $this->translate('It&apos;s free and always will be.')?></div>
+                    				</div>
+                    				<div id="registration_container">
+                    					<div data-referrer="simple_registration_form">
+                    						<div class="simple_registration_container" id="simple_registration_container">
+                    							<div id="reg_box">
+                    							    <?php
+                    							        session_start(); 
+                    							        $post = isset($_SESSION[SessionNames::ERROR_FORM]) ? $_SESSION[SessionNames::ERROR_FORM] : null;							        
+                    							    ?>
+                    								<form id="reg" name="reg" method="post" action="/account/register" onsubmit="return true;">
+                    									<div class="large_form" id="reg_form_box">
+                    										<table cellspacing="0" cellpadding="1" class="uiGrid editor">
+                    											<tbody>
+                    												<tr>
+                    													<td class="label">
+                    														<label><?php echo $this->translate('First Name:')?></label>
+                    													</td>
+                    													<td>
+                    														<div class="field_container">
+                    															<input maxlength="30" value="<?php echo ($post!=null) ? $post['first_name']:'' ?>" type="text" name="first_name" id="first_name" class="inputtext" title="">
+                    														</div>
+                    													</td>
+                    												</tr>
+                    												<tr>
+                    													<td class="label">
+                    														<label><?php echo $this->translate('Last Name:')?></label>
+                    													</td>
+                    													<td>
+                    														<div class="field_container">
+                    															<input maxlength="30" value="<?php echo ($post!=null) ? $post['last_name']:'' ?>" type="text" name="last_name" id="last_name" class="inputtext">
+                    														</div>
+                    													</td>
+                    												</tr>
+                    												<tr>
+                    													<td class="label">
+                    														<label><?php echo $this->translate('Your Email:')?></label>
+                    													</td>
+                    													<td>
+                    														<div class="field_container">
+                    															<input maxlength="200" value="<?php echo ($post!=null) ? $post['email']:'' ?>" type="text" name="email" id="email" class="inputtext">
+                    														</div>
+                    													</td>
+                    												</tr>
+                    												<tr>
+                    													<td class="label">
+                    														<label><?php echo $this->translate('Re-enter Email:')?></label>
+                    													</td>
+                    													<td>
+                    														<div class="field_container">
+                    															<input maxlength="200" value="<?php echo ($post!=null) ? $post['email_confirmation']:'' ?>" type="text" name="email_confirmation" id="email_confirmation" class="inputtext">
+                    														</div>
+                    													</td>
+                    												</tr>
+                    												<tr>
+                    													<td class="label">
+                    														<label><?php echo $this->translate('New Password:')?></label>
+                    													</td>
+                    													<td>
+                    														<div class="field_container">
+                    															<input maxlength="30" type="password" value="" name="password" id="password" class="inputtext">
+                    														</div>
+                    													</td>																		
+                    												</tr>
+                    												<tr>
+                    													<td class="label"><?php echo $this->translate('I am:')?></td>
+                    													<td>
+                    														<div class="field_container">																			
+                    															<select id="gender" name="gender" class="select">
+                    																<option value="0" <?php echo ($post==null) ? "selected='selected'":'' ?>><?php echo $this->translate('Select Sex:')?></option>
+                    																<option value="1" <?php echo ($post!=null && $post['gender']==1) ? "selected='selected'":' ' ?>><?php echo $this->translate('Female')?></option>
+                    																<option value="2" <?php echo ($post!=null && $post['gender']==2) ? "selected='selected'":' ' ?>><?php echo $this->translate('Male')?></option>
+                    															</select>
+                    														</div>
+                    													</td>
+                    												</tr>
+                    												<tr>
+                    													<td class="label"><?php echo $this->translate('Birthday:')?></td>
+                    													<td>
+                    														<div class="field_container">
+                    														<select class="" id="birthday_month"  onchange="selectMonth()" name="birthday_month">
+                    															<option value="-1" <?php echo ($post==null) ? "selected='selected'":'' ?>><?php echo $this->translate('Month:')?></option>
+                    															<option value="1" <?php echo ($post!=null && $post['birthday_month']==1) ? "selected='selected'":' ' ?>><?php echo $this->translate('Jan')?></option>
+                    															<option value="2" <?php echo ($post!=null && $post['birthday_month']==2) ? "selected='selected'":' ' ?>><?php echo $this->translate('Feb')?></option>
+                    															<option value="3" <?php echo ($post!=null && $post['birthday_month']==3) ? "selected='selected'":' ' ?>><?php echo $this->translate('Mar')?></option>
+                    															<option value="4" <?php echo ($post!=null && $post['birthday_month']==4) ? "selected='selected'":' ' ?>><?php echo $this->translate('Apr')?></option>
+                    															<option value="5" <?php echo ($post!=null && $post['birthday_month']==5) ? "selected='selected'":' ' ?>><?php echo $this->translate('May')?></option>
+                    															<option value="6" <?php echo ($post!=null && $post['birthday_month']==6) ? "selected='selected'":' ' ?>><?php echo $this->translate('Jun')?></option>
+                    															<option value="7" <?php echo ($post!=null && $post['birthday_month']==7) ? "selected='selected'":' ' ?>><?php echo $this->translate('Jul')?></option>
+                    															<option value="8" <?php echo ($post!=null && $post['birthday_month']==8) ? "selected='selected'":' ' ?>><?php echo $this->translate('Aug')?></option>
+                    															<option value="9" <?php echo ($post!=null && $post['birthday_month']==9) ? "selected='selected'":' ' ?>><?php echo $this->translate('Sep')?></option>
+                    															<option value="10" <?php echo ($post!=null && $post['birthday_month']==10) ? "selected='selected'":' ' ?>><?php echo $this->translate('Oct')?></option>
+                    															<option value="11" <?php echo ($post!=null && $post['birthday_month']==11) ? "selected='selected'":' ' ?>><?php echo $this->translate('Nov')?></option>
+                    															<option value="12" <?php echo ($post!=null && $post['birthday_month']==12) ? "selected='selected'":' ' ?>><?php echo $this->translate('Dec')?></option>
+                    														</select> 
+                    														<select class="" id="birthday_day" name="birthday_day">
+                    															<option value="-1" <?php echo ($post==null) ? "selected='selected'":'' ?>><?php echo $this->translate('Day:')?></option>
+                    															<?php																
+                    																for ($i = 1; $i <= 31; $i++){
+                                                                                        if ($post!=null && $post['birthday_day']==$i)
+                                                                                        	echo "<option selected='selected' value=\"" . $i . "\">" . $i . "</option>";
+                                                                                        else
+                                                                                        	echo "<option value=\"" . $i . "\">" . $i . "</option>";
+                    																}										 
+                    															?>	
+                    															
+                    														</select>
+                    														<select id="birthday_year" onchange="selectYear()" name="birthday_year">
+                    															<option value="-1" <?php echo ($post==null) ? "selected='selected'":'' ?>>Year:</option>
+                    															<?php
+                    																$year = date("Y");
+                    																for ($i = $year; $i >= $year - 120; $i--){
+                    																	if ($post!=null && $post['birthday_year']==$i)
+                    																	    echo "<option selected='selected' value=\"" . $i . "\">" . $i . "</option>";                                                                    	
+                                                                                        else
+                                                                                            echo "<option value=\"" . $i . "\">" . $i . "</option>";
+                    																}										 
+                    															?>															
+                    														</select>
+                    													</div>
+                    												</td>
+                    											</tr>											
+                    											<tr>
+                    												<td class="label"></td>
+                    												<td>
+                    													<div id="ppt_container" class="fbRegistrationPPT">
+                    														<p class="privacy_policy_text text"><?php echo $this->translate('By clicking Sign Up, you agree to our')?> <a rel="nofollow" target="_blank" href="/terms.php">Terms</a> and that you have read our <a rel="nofollow" target="_blank" href="/policy.php">Data Use Policy</a>, including our <a rel="nofollow" target="_blank" href="/help/cookies/">Cookie Use</a>.</p>
+                    													</div>
+                    												</td>
+                    											</tr>
+                    										</tbody>
+                    									</table>
+                    										<div class="reg_btn clearfix">
+                    											<label for="ujyw3k41" class="uiButton uiButtonSpecial">
+                    												<input type="submit" id="btnSignUp" value="<?php echo $this->translate('Sign Up')?>">
+                    											</label>
+                    										</div>
+                    									</div>	
+                    									<?php unset($_SESSION[SessionNames::ERROR_FORM]);?>								
+                    								</form>
+                    								
+                    								
+                    								<?php 								    
+                    								   $service = new Service(); 
+                                                       $validation = $service->getValidation(SessionNames::ERROR);                                   
+                                                       
+                                                       if ($validation->getByKey(Validation::SUMMARY_VALIDATION) != "") {                                    
+                    								?>
+                    								<div class="" id="reg_error" style="opacity: 1; height: auto;">
+                    									<div id="reg_error_inner">
+                    										<form>
+                    										    <?php 
+                    										        //just one error
+                    										       echo $validation->getByKey(Validation::SUMMARY_VALIDATION);
+                    										    ?>
+                    										</form>
+                    									</div>
+                    								</div>
+                    								<?php 
+                    								        $service->setValidation(SessionNames::ERROR, null);
+                                                        }
+                                                     
+                                                      ?>
+                    								<div class="tos_container" id="tos_container">
+                    								</div>
+                    							</div>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</div>
+                    	</div>
+                    </div>
+                    
+                    <!-- Languages -->
+                    <?php echo $this->render('layout/languages.phtml') ?>
+                </div>
+             </div>  
+					
+			    <?php echo $this->render('layout/footer.phtml') ?>	
+		
+		</div>
 
-<!-- Languages -->
-<?php echo $this->render('layout/languages.phtml') ?>	
+ 	

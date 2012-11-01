@@ -1,5 +1,7 @@
 /*1348029865,178142507*/
 
+
+.login_error_box {margin-top: 10px;}
 .uiInputLabel + .uiInputLabel{margin-top:3px}
 .uiInputLabel + .inlineBlock.uiInputLabel{margin-left:10px;margin-top:0}
 .uiInputLabelRadio, .uiInputLabelCheckbox{float:left;margin:0;padding:0}
