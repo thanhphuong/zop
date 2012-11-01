@@ -27,7 +27,7 @@ class AccountController extends AbstractActionController
     }
 
     public function indexAction ()
-    {
+    {   
         return new ViewModel();
     }
 
@@ -55,7 +55,6 @@ class AccountController extends AbstractActionController
                 $account = $this->getAccountTable()->getAccountByEmail($account->email);
                 $account->pid = rand(12345, 99999);
                 
-                print_r($account);
                 $this->getAccountTable()->saveAccount($account);
                 $mailer = new Mailer();
                 $mailer->sendMailRegister($this, $account);
