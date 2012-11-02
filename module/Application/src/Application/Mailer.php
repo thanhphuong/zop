@@ -18,31 +18,13 @@ class Mailer
     public function __construct ()
     {}
 
-    public function sendMailTest ($controller)
-    {
-        $service = new Service();
-        $translate = $service->getTranslate($controller);
-        
-        $name = "Bui Thanh Phuong";
-        $link = 'http://' . $_SERVER['HTTP_HOST'] . '\account\verify?verificationCode=' . 12345;
-        
-        // create body
-        $content = $translate(sprintf('<div><p>Hi %s,</p>
-                    <br/>
-                    <p>To start using ProjectName, you need to <a href="%s" target="_blank" rel="nofollow">verify your email address</a>. Please click the link.</p>
-                    <br/>
-                    <p>The FIOSOFT crew</p>
-        		    </div>', $name, $link));
-        echo ($content);
-    }
-
     public function sendMailRegister ($controller, Account $account)
     {
         $service = new Service();
         $translate = $service->getTranslate($controller);
         
         $name = $account->full_name;
-        $link = 'http://' . $_SERVER['HTTP_HOST'] . '\account\verify?verificationCode=' . $account->pid;
+        $link = 'http://' . $_SERVER['HTTP_HOST'] . '\account\verify?verificationCode=' . $account->pid . '&email=' . $account->email ;
         
         // create body
         $content = $translate(

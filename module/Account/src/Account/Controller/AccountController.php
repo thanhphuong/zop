@@ -27,13 +27,22 @@ class AccountController extends AbstractActionController
     }
 
     public function indexAction ()
-    {   
+    {
         return new ViewModel();
     }
 
     public function loginAction ()
     {
-        return new ViewModel();
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            if ($this->isValidLogin($request->getPost())) { 
+                return $this->redirect()->toRoute('map');
+            }
+            session_start();
+            $_SESSION[SessionNames::ERROR_FORM] = $request->getPost();
+        }
+        
+        return $this->redirect()->toRoute('account');
     }
 
     public function logoutAction ()
@@ -73,6 +82,61 @@ class AccountController extends AbstractActionController
         return new ViewModel();
     }
 
+    private function isValidLogin ($data)
+    {
+    	$service = new Service();
+    	$translate = $service->getTranslate($this);
+    	$inputFilter = new InputFilter();
+    	$validation = new Validation();
+    
+    	if ($inputFilter->checkEmpty($data['email']) || $inputFilter->checkEmpty($data['password']))
+    
+    	{
+    		$validation->setByKey(Validation::SUMMARY_VALIDATION, $translate("You must fill in all of the fields."));
+    		$service->setValidation(SessionNames::ERROR, $validation);
+    		return false;
+    	}
+    
+    	if (! $inputFilter->checkEmail($data['email'])) {
+    		$validation->setByKey(Validation::SUMMARY_VALIDATION, $translate("Please enter a valid email address."));
+    		$service->setValidation(SessionNames::ERROR, $validation);
+    		return false;
+    	}
+
+    	if (! $inputFilter->checkStringLength($data['password'], 4, 30)) {
+    		$validation->setByKey(Validation::SUMMARY_VALIDATION, $translate("Password must be between 4 to 30 characters."));
+    		$service->setValidation(SessionNames::ERROR, $validation);
+    		return false;
+    	}
+    
+    	   
+    	$account = $this->getAccountTable()->getAccountByEmail($data['email']);    	
+
+    	if ($account == null){
+    	    //account not exists
+    	    return;
+    	}
+    	
+    	if ($account->email != trim($data['email'])) {
+    	    //email is invalid
+    	    return;
+    	} 
+    	
+    	if ($account->password != md5($data['password'])){
+    	    
+    	}
+    	
+    	if ($this->getAccountTable()->checkEmailExists($data['email'])) {
+    		$validation->setByKey(Validation::SUMMARY_VALIDATION, sprintf($translate("Sorry, it looks like %s belongs to an existing account."), $data['email']));
+    		$service->setValidation(SessionNames::ERROR, $validation);
+    		return false;
+    	}
+    
+    	
+    
+    	return true;
+    }
+    
     private function isValidRegister ($data)
     {
         $service = new Service();
