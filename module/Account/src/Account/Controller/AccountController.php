@@ -4,8 +4,6 @@ use Application\Mailer;
 use Application\Service;
 use Application\Constants;
 use Account\Model\Account;
-use Zend\View\Helper\Layout;
-use Zend\Mvc\View\Console\ViewManager;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Application\SessionNames;
@@ -32,7 +30,7 @@ class AccountController extends AbstractActionController
     }
 
     public function loginAction ()
-    {
+    { 
         $request = $this->getRequest();
         if ($request->isPost()) {
             if ($this->isValidLogin($request->getPost())) { 
@@ -42,7 +40,7 @@ class AccountController extends AbstractActionController
             $_SESSION[SessionNames::ERROR_FORM] = $request->getPost();
         }
         
-        return $this->redirect()->toRoute('account');
+        return new ViewModel();
     }
 
     public function logoutAction ()
@@ -51,7 +49,7 @@ class AccountController extends AbstractActionController
     }
 
     public function registerAction ()
-    {
+    {     
         $request = $this->getRequest();
         if ($request->isPost()) {
             
@@ -83,32 +81,30 @@ class AccountController extends AbstractActionController
     }
 
     private function isValidLogin ($data)
-    {
+    {        
     	$service = new Service();
     	$translate = $service->getTranslate($this);
     	$inputFilter = new InputFilter();
     	$validation = new Validation();
+    	return false;
     
-    	if ($inputFilter->checkEmpty($data['email']) || $inputFilter->checkEmpty($data['password']))
-    
+    	if ($inputFilter->checkEmpty($data['email']) || ! $inputFilter->checkEmail($data['email']))    
+    	{    	
+    	    $validation->setByKey('title', $translate("Incorrect username"));
+    	    $validation->setByKey('error_description_1', $translate("The username you entered does not belong to any account."));
+    	    $validation->setByKey('error_description_2', $translate("You can login using any email, username or mobile phone number associated with your account. Make sure that it is typed correctly."));
+    		$service->setValidation(SessionNames::ERROR, $validation);
+    		return false;
+    	}
+    	
+    	if ( $inputFilter->checkEmpty($data['password']) || ! $inputFilter->checkStringLength($data['password'], 4, 30))
     	{
-    		$validation->setByKey(Validation::SUMMARY_VALIDATION, $translate("You must fill in all of the fields."));
+    		$validation->setByKey('title', $translate("Please re-enter your password"));
+    		$validation->setByKey('error_description_1', $translate("The password you entered is incorrect. Please try again (make sure your caps lock is off)."));
+    		$validation->setByKey('error_description_2', $translate("Forgot your password? <a target='' href=\"/recover.php?email_or_phone=sf%40yahoo.com\">Request a new one.</a>"));
     		$service->setValidation(SessionNames::ERROR, $validation);
     		return false;
     	}
-    
-    	if (! $inputFilter->checkEmail($data['email'])) {
-    		$validation->setByKey(Validation::SUMMARY_VALIDATION, $translate("Please enter a valid email address."));
-    		$service->setValidation(SessionNames::ERROR, $validation);
-    		return false;
-    	}
-
-    	if (! $inputFilter->checkStringLength($data['password'], 4, 30)) {
-    		$validation->setByKey(Validation::SUMMARY_VALIDATION, $translate("Password must be between 4 to 30 characters."));
-    		$service->setValidation(SessionNames::ERROR, $validation);
-    		return false;
-    	}
-    
     	   
     	$account = $this->getAccountTable()->getAccountByEmail($data['email']);    	
 

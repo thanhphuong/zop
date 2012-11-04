@@ -25,12 +25,7 @@ return array(
             ),
         ),
     ),
-
-    'view_manager' => array(    		
-	        'template_path_stack' => array(
-	            'account' => __DIR__ . '/../view',
-	        ),
-    ),
+    
 	
 	'view_manager' => array(			
 			'template_map' => array(

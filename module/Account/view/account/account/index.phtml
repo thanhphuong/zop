@@ -61,7 +61,7 @@ use Application\SessionNames; ?>
                     							        session_start(); 
                     							        $post = isset($_SESSION[SessionNames::ERROR_FORM]) ? $_SESSION[SessionNames::ERROR_FORM] : null;							        
                     							    ?>
-                    								<form id="reg" name="reg" method="post" action="/account/register" onsubmit="return true;">
+                    								<form id="reg" name="reg" method="post" action="/account/register">
                     									<div class="large_form" id="reg_form_box">
                     										<table cellspacing="0" cellpadding="1" class="uiGrid editor">
                     											<tbody>
