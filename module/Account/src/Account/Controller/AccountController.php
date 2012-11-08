@@ -57,11 +57,7 @@ class AccountController extends AbstractActionController
             $account->exchangeArray($request->getPost());
             
             if ($this->isValidRegister($request->getPost())) {
-                $this->getAccountTable()->saveAccount($account);
-                // verify email
-                $account = $this->getAccountTable()->getAccountByEmail($account->email);
                 $account->pid = rand(12345, 99999);
-                
                 $this->getAccountTable()->saveAccount($account);
                 $mailer = new Mailer();
                 $mailer->sendMailRegister($this, $account);
@@ -97,7 +93,20 @@ class AccountController extends AbstractActionController
     		return false;
     	}
     	
-    	if ( $inputFilter->checkEmpty($data['password']) || ! $inputFilter->checkStringLength($data['password'], 4, 30))
+    	
+    	   
+    	$account = $this->getAccountTable()->getAccountByEmail($data['email']);    	
+    	
+    	if ($account == null || $account->email != trim($data['email'])) {
+    	    $validation->setByKey('title', $translate("Incorrect Email"));
+    	    $validation->setByKey('error_description_1', $translate("The email you entered does not belong to any account."));
+    	    $validation->setByKey('error_description_2', $translate("You can login using any email, username or mobile phone number associated with your account. Make sure that it is typed correctly."));
+    		$service->setValidation(SessionNames::ERROR, $validation);
+    	    return false;
+    	} 
+    	
+    	
+    	if ( $inputFilter->checkEmpty($data['password']) || ! $inputFilter->checkStringLength($data['password'], 4, 30) || $account->password != md5($data['password']))
     	{
     		$validation->setByKey('title', $translate("Please re-enter your password"));
     		$validation->setByKey('error_description_1', $translate("The password you entered is incorrect. Please try again (make sure your caps lock is off)."));
@@ -105,30 +114,6 @@ class AccountController extends AbstractActionController
     		$service->setValidation(SessionNames::ERROR, $validation);
     		return false;
     	}
-    	   
-    	$account = $this->getAccountTable()->getAccountByEmail($data['email']);    	
-
-    	if ($account == null){
-    	    //account not exists
-    	    return;
-    	}
-    	
-    	if ($account->email != trim($data['email'])) {
-    	    //email is invalid
-    	    return;
-    	} 
-    	
-    	if ($account->password != md5($data['password'])){
-    	    
-    	}
-    	
-    	if ($this->getAccountTable()->checkEmailExists($data['email'])) {
-    		$validation->setByKey(Validation::SUMMARY_VALIDATION, sprintf($translate("Sorry, it looks like %s belongs to an existing account."), $data['email']));
-    		$service->setValidation(SessionNames::ERROR, $validation);
-    		return false;
-    	}
-    
-    	
     
     	return true;
     }

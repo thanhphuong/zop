@@ -43,6 +43,10 @@ use Application\SessionNames; ?>
                  </div>
                  <div class="phl ptm">
                      <div class="login_form_container">
+                          <?php
+						        session_start(); 
+						        $post = isset($_SESSION[SessionNames::ERROR_FORM]) ? $_SESSION[SessionNames::ERROR_FORM] : null;							        
+                           ?>
                          <form method="post" action="#" id="login_form">                             
                              <div class="pam login_error_box uiBoxRed">
                                  <div class="fsl fwb fcb">Facebook Will Be Back Soon</div>
