@@ -2,7 +2,9 @@
 
 use Application\Validation;
 
-use Application\SessionNames; ?>
+use Application\SessionNames;
+
+use Application\ValidationConstants;?>
 
 <!-- Header -->
 <div data-referrer="pagelet_bluebar" id="pagelet_bluebar">
@@ -44,23 +46,40 @@ use Application\SessionNames; ?>
                  <div class="phl ptm">
                      <div class="login_form_container">
                           <?php
-						        session_start(); 
+                                if (! isset($_SESSION)) {
+                                    session_start();
+                                } 
 						        $post = isset($_SESSION[SessionNames::ERROR_FORM]) ? $_SESSION[SessionNames::ERROR_FORM] : null;							        
                            ?>
-                         <form method="post" action="#" id="login_form">                             
+                         <form method="post" action="#" id="login_form">     
+                            <?php 								    
+						       $service = new Service(); 
+                               $validation = $service->getValidation(SessionNames::ERROR);                                   
+                               
+                               if ($validation->getByKey(ValidationConstants::ERROR_LOGIN_TITLE) != "" &&
+                                   $validation->getByKey(ValidationConstants:: ERROR_LOGIN_DESCRIPTION_1) != "" &&
+                                   $validation->getByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_2) != "" ) {                                      
+							?>                        
                              <div class="pam login_error_box uiBoxRed">
-                                 <div class="fsl fwb fcb">Facebook Will Be Back Soon</div>
-                                 <div>Facebook is down for required maintenance right now, but you should be able to get back on within a few minutes. In the meantime, <a href="#">read more</a> about why you're seeing this message. Thanks for your patience as we improve the site.
+                                 <div class="fsl fwb fcb"><?php echo $validation->getByKey(ValidationConstants::ERROR_LOGIN_TITLE );?></div>
+                                 <div>
+                                     <p><?php echo $validation->getByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_1);?></p>
+                                     <p><?php echo $validation->getByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_2);?></p>
                                  </div>
-                             </div>
+                             </div>                                 
+                             <?php 
+    						        $service->setValidation(SessionNames::ERROR, null);
+                                }
+                             
+                              ?>
                              <div id="loginform">                                 
                                  <div class="form_row clearfix">
                                      <label class="login_form_label" for="email"><?php echo $this->translate('Email:')?></label>
-                                     <input type="text" value="btphuong2345@yahoo.com" name="email" id="email" class="inputtext">
+                                     <input type="text" value="<?php echo ($post!=null) ? $post['email']:'' ?>" name="email" id="email" class="inputtext">
                                  </div>
                                  <div class="form_row clearfix">
                                      <label class="login_form_label" for="pass"><?php echo $this->translate('Password:')?></label>
-                                     <input type="password" class="inputpassword" id="pass" name="pass">
+                                     <input type="password" class="inputpassword" id="password" name="password">
                                  </div>
                                  <div class="persistent">
                                      <div class="uiInputLabel clearfix">
@@ -80,6 +99,7 @@ use Application\SessionNames; ?>
                                  </div>
                                      <p class="reset_password form_row"><a tabindex="-1" target="" href="#"><?php echo $this->translate('Forgot your password?')?></a></p>
                              </div>
+                             <?php unset($_SESSION[SessionNames::ERROR_FORM]);?>		
                          </form>
                      </div>
                  </div>

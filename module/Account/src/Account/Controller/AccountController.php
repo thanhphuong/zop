@@ -1,5 +1,7 @@
 <?php
 namespace Account\Controller;
+use Application\ValidationConstants;
+
 use Application\Mailer;
 use Application\Service;
 use Application\Constants;
@@ -36,7 +38,9 @@ class AccountController extends AbstractActionController
             if ($this->isValidLogin($request->getPost())) { 
                 return $this->redirect()->toRoute('map');
             }
-            session_start();
+            if (! isset($_SESSION)) {
+                session_start();
+            }
             $_SESSION[SessionNames::ERROR_FORM] = $request->getPost();
         }
         
@@ -58,13 +62,16 @@ class AccountController extends AbstractActionController
             
             if ($this->isValidRegister($request->getPost())) {
                 $account->pid = rand(12345, 99999);
+                $account->password = md5($account->password);
                 $this->getAccountTable()->saveAccount($account);
                 $mailer = new Mailer();
                 $mailer->sendMailRegister($this, $account);
                 
                 return $this->redirect()->toRoute('map');
             }
-            session_start();
+            if (! isset($_SESSION)) {
+                session_start();
+            }
             $_SESSION[SessionNames::ERROR_FORM] = $request->getPost();
         }
         
@@ -81,14 +88,13 @@ class AccountController extends AbstractActionController
     	$service = new Service();
     	$translate = $service->getTranslate($this);
     	$inputFilter = new InputFilter();
-    	$validation = new Validation();
-    	return false;
+    	$validation = new Validation();    	
     
     	if ($inputFilter->checkEmpty($data['email']) || ! $inputFilter->checkEmail($data['email']))    
     	{    	
-    	    $validation->setByKey('title', $translate("Incorrect username"));
-    	    $validation->setByKey('error_description_1', $translate("The username you entered does not belong to any account."));
-    	    $validation->setByKey('error_description_2', $translate("You can login using any email, username or mobile phone number associated with your account. Make sure that it is typed correctly."));
+    	    $validation->setByKey(ValidationConstants::ERROR_LOGIN_TITLE, $translate("Incorrect username"));
+    	    $validation->setByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_1, $translate("The username you entered does not belong to any account."));
+    	    $validation->setByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_2, $translate("You can login using any email, username or mobile phone number associated with your account. Make sure that it is typed correctly."));
     		$service->setValidation(SessionNames::ERROR, $validation);
     		return false;
     	}
@@ -98,19 +104,19 @@ class AccountController extends AbstractActionController
     	$account = $this->getAccountTable()->getAccountByEmail($data['email']);    	
     	
     	if ($account == null || $account->email != trim($data['email'])) {
-    	    $validation->setByKey('title', $translate("Incorrect Email"));
-    	    $validation->setByKey('error_description_1', $translate("The email you entered does not belong to any account."));
-    	    $validation->setByKey('error_description_2', $translate("You can login using any email, username or mobile phone number associated with your account. Make sure that it is typed correctly."));
+    	    $validation->setByKey(ValidationConstants::ERROR_LOGIN_TITLE, $translate("Incorrect Email"));
+    	    $validation->setByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_1, $translate("The email you entered does not belong to any account."));
+    	    $validation->setByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_2, $translate("You can login using any email, username or mobile phone number associated with your account. Make sure that it is typed correctly."));
     		$service->setValidation(SessionNames::ERROR, $validation);
     	    return false;
     	} 
     	
     	
     	if ( $inputFilter->checkEmpty($data['password']) || ! $inputFilter->checkStringLength($data['password'], 4, 30) || $account->password != md5($data['password']))
-    	{
-    		$validation->setByKey('title', $translate("Please re-enter your password"));
-    		$validation->setByKey('error_description_1', $translate("The password you entered is incorrect. Please try again (make sure your caps lock is off)."));
-    		$validation->setByKey('error_description_2', $translate("Forgot your password? <a target='' href=\"/recover.php?email_or_phone=sf%40yahoo.com\">Request a new one.</a>"));
+    	{    	    
+    		$validation->setByKey(ValidationConstants::ERROR_LOGIN_TITLE, $translate("Please re-enter your password"));
+    		$validation->setByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_1, $translate("The password you entered is incorrect. Please try again (make sure your caps lock is off)."));
+    		$validation->setByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_2, $translate("Forgot your password? <a target='' href=\"/recover.php?email_or_phone=sf%40yahoo.com\">Request a new one.</a>"));
     		$service->setValidation(SessionNames::ERROR, $validation);
     		return false;
     	}

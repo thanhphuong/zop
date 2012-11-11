@@ -44,7 +44,7 @@ class Account
         $this->pid = (isset($data['pid'])) ? $data['pid'] : null;
         $this->email = (isset($data['email'])) ? strtolower(trim($data['email'])) : null;
         $this->phone = (isset($data['phone'])) ? $data['phone'] : null;
-        $this->password = (isset($data['password'])) ? md5($data['password']) : null;
+        $this->password = (isset($data['password'])) ? $data['password'] : null;
         $this->first_name = (isset($data['first_name'])) ? trim($data['first_name']) : null;
         $this->last_name = (isset($data['last_name'])) ? trim($data['last_name']) : null;
         $this->full_name = $this->first_name . ' ' . $this->last_name;
