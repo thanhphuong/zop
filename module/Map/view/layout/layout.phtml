@@ -41,12 +41,16 @@
     
    
 <style>
-     #map_canvas { margin: 0; padding: 0; height: 100%; }
-    </style>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization">
+#map_canvas {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+</style>
+<script
+	src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization">
     </script>
-    <script>
+<script>
       var map;
 
       function initialize() {
@@ -58,12 +62,11 @@
         map = new google.maps.Map(document.getElementById('map_canvas'),
               mapOptions);
 
-        // Create a <script> tag and set the USGS URL as the source.
         var script = document.createElement('script');
-        // (In this example we use a locally stored copy instead.)
-        // script.src = 'http://earthquake.usgs.gov/earthquakes/feed/geojsonp/2.5/week';
-        script.src = 'earthquake_GeoJSONP';
-        document.getElementsByTagName('head')[0].appendChild(script);
+        script.src = 'http://earthquake.usgs.gov/earthquakes/feed/geojsonp/2.5/week';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(script, s);
+        
       }
 
       // Loop through the results array and place a marker for each
@@ -74,17 +77,20 @@
           var latLng = new google.maps.LatLng(coords[1],coords[0]);
           var marker = new google.maps.Marker({
             position: latLng,
-            map: map
+            map: map,
+            icon: getCircle(earthquake.properties.mag)
+            
           });
         }
       }
 
   </script>
-    
+
 
 
 </head>
-<body class="hasLeftCol home composerExpanded fbx ff4 win Locale_en_US" onload="initialize()">
+<body class="hasLeftCol home composerExpanded fbx ff4 win Locale_en_US"
+	onload="initialize()">
 	<div class="_li">
 
 		<!-- Header -->
@@ -1304,10 +1310,12 @@
 							class="homeFixedLayout homeWiderContent hasExpandedComposer newsFeedComposer composerOpen homeFixedLayout hasRightCol"
 							id="contentCol" style="min-height: 100px;"
 							data-referrer="contentCol">
+							<div id="main_map" style="height: 500px; width:800px;">
 
-							<div id="map_canvas"></div>
+								<div id="map_canvas"></div>
 
-
+							</div>
+							<?php echo $this->content; ?>
 						</div>
 
 

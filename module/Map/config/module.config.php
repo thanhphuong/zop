@@ -31,7 +31,7 @@ return array(
 					'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',								
 			),
 			'template_path_stack' => array(
-	            'account' => __DIR__ . '/../view',
+	            'map' => __DIR__ . '/../view',
 	        ),
 	),
 );

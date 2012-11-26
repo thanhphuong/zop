@@ -426,7 +426,7 @@ html ._fu ._g3{display:none}
 .fb_content{padding-bottom:20px}
 .fbx .fb_content{padding-bottom:0}
 #mainContainer{margin-left:-1px;display:block;width:100%}
-.hasLeftCol #mainContainer{border-right:1px solid #ccc;min-height:600px}
+.hasLeftCol #mainContainer{border-right:1px solid #ccc;min-height:500px}
 #leftCol{display:none;float:left;padding:20px 0 0 2px;width:179px;word-wrap:break-word}
 .hasLeftCol #leftCol{display:block}
 #rightCol{margin-top:-10000px;float:right;padding-right:0;width:244px;word-wrap:break-word}
@@ -457,7 +457,7 @@ body.fixedBody{overflow-x:hidden}
 div.bookmarksMenuButton .uiCloseButton{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yz/x/ELW8FjnbiZf.png);background-repeat:no-repeat;background-size:auto;background-position:-19px -59px}
 div.bookmarksMenuButton .uiCloseButton:hover, div.bookmarksMenuButton .openToggler .uiCloseButton{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yz/x/ELW8FjnbiZf.png);background-repeat:no-repeat;background-size:auto;background-position:-1px -59px}
 .composerExpandedPhoto #leftCol{padding-top:2px}
-.composerExpanded #content .newsFeedComposer{padding-top:5px}
+.composerExpanded #content .newsFeedComposer{padding-top:0px}
 .composerExpanded .newsFeedComposer #rightCol{padding-top:40px}
 .composerExpandedPhoto .newsFeedComposer #rightCol{padding-top:38px}
 .hasExpandedComposer .home_right_column,
@@ -2135,7 +2135,7 @@ body{overflow-y:scroll}
 .auto_resize_iframe{height:auto;overflow:hidden}
 .pipe{color:gray;padding:0 3px}
 #content{width:auto;padding:0;margin:0}
-.profile #content, .home #content, .search #content{min-height:600px}
+.profile #content, .home #content, .search #content{min-height:500px}
 .UIStandardFrame_Container{width:960px;padding-top:20px;margin:0 auto}
 .UIStandardFrame_Content{width:760px;float:left;margin:0;padding:0}
 .UIStandardFrame_SidebarAds{width:200px;padding:0;margin:0;float:right}
