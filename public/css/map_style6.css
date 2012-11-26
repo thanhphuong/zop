@@ -1,0 +1,450 @@
+/*1353295265,178142495*/
+
+.UIActionButtonIcon i.img{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yT/x/epnsA9GpSGe.png);display:inline-block;height:13px;margin:0;width:8px}
+.profileApprovalRow{position:relative}
+.pendingPostsHeader .uiHeaderTitle{padding:4px 0 5px 4px}
+.profileApprovalRow .uiStreamStory{padding:0}
+.profileApprovalRow .uiStreamMessage, .profileApprovalRow .approvalBody{padding-right:60px}
+.profileApprovalRow .actionButtons{position:absolute;right:0;top:18px}
+.profileApprovalRow .actorName{font-weight:bold}
+.profileApprovalQueueHeaderContainer{border-bottom:3px solid #e2e2e2;padding:4px 5px 6px}
+.profileApprovalQueueHeader{padding-top:4px}
+.profileApprovalQueueTitle{float:left;margin-right:10px;margin-bottom:2px}
+.profileApprovalQueueFilter{float:left}
+.profileApprovalListContainer{padding-left:5px;padding-right:5px}
+.profileApprovalQueueEmptyList{padding-bottom:100px;padding-top:80px;text-align:center}
+.profileApprovalQueueEmptyList .text{color:lightgray;font-size:18px}
+.profileApprovalQueueItemMessage{border-left:2px solid #ccc;color:gray;font-size:11px;margin-top:5px;max-width:85%;padding:3px 3px 3px 7px}
+.historic .present,
+.current .enddate{display:none}
+.sp_c1qdh5{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/x/MmmFHCK3KAn.png);background-size:auto;background-repeat:no-repeat;display:inline-block;height:11px;width:11px}
+.sx_c692f7{width:17px;height:17px;background-position:-0px -0px}
+.sx_3764a3{width:17px;height:17px;background-position:-0px -18px}
+.sx_49adcf{width:17px;height:17px;background-position:-0px -36px}
+.sx_a03dc0{width:17px;height:17px;background-position:-0px -54px}
+.sx_068bd8{width:17px;height:17px;background-position:-0px -72px}
+.sx_d8b6ac{background-position:-0px -90px}
+.sx_91e11b{background-position:-0px -102px}
+.sx_742eae{background-position:-0px -114px}
+.sx_b645a1{background-position:-0px -126px}
+.sx_bfe68d{background-position:-0px -138px}
+.sx_ef5771{background-position:-0px -150px}
+.appsFeedSubHeader{padding-left:23px}
+div#contentCol.appFeedFilter div#rightCol{padding-top:0}
+div#contentCol.appFeedFilter div#contentArea div#pagelet_home_stream{border-top:1px solid #ccc}
+.ogAggregatedTableFacepileSmall{margin-right:-2px;padding-bottom:1px;padding-top:1px}
+.ogAggregatedTableFacepileMedium{margin:5px -2px 5px 0}
+.ogAggregatedTableAttachment{margin-top:-6px;margin-bottom:-5px}
+.ogAggregatedTableContainer .ogAggregatedTableNormalItemContent, .ogAggregatedTableRowObject, .ogAggregatedTableRowDescription{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ogAggregatedTableContainer .ogAggregatedTableNormalItemContent{display:block;height:18px;margin-left:2px;margin-top:6px}
+.ogAggregatedTableContainer .ogAggregatedTableOneToMany
+.ogAggregatedTableNormalItemContent, .ogAggregatedTableRowDescription{width:376px}
+.ogAggregatedTableContainer .ogAggregatedTableManyToMany
+.ogAggregatedTableNormalItemContent{margin-right:14px;width:256px}
+.ogAggregatedTableRow .srcIcon{margin-bottom:5px;margin-top:5px}
+.ogAggregatedTableRowObject{font-weight:bold;margin-top:6px}
+.ogAggregatedGamesRowLineTwo{color:gray}
+.ogAggregatedTableRowCollapsed, .ogAggregatedTableExpanded .ogAggregatedTableSeeMore{display:none}
+.ogAggregatedTableExpanded .ogAggregatedTableRowCollapsed{display:block}
+.ogAggregatedTableSeeMore{height:18px;padding-top:6px}
+.largeStarRating .uiStars i{height:17px;width:17px}
+.largeStarRating .uiStars .emptyStar{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/x/MmmFHCK3KAn.png);background-repeat:no-repeat;background-size:auto;background-position:0 0}
+.largeStarRating .uiStars .onefourthStar{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/x/MmmFHCK3KAn.png);background-repeat:no-repeat;background-size:auto;background-position:0 -54px}
+.largeStarRating .uiStars .halfStar{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/x/MmmFHCK3KAn.png);background-repeat:no-repeat;background-size:auto;background-position:0 -36px}
+.largeStarRating .uiStars .threefourthsStar{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/x/MmmFHCK3KAn.png);background-repeat:no-repeat;background-size:auto;background-position:0 -72px}
+.largeStarRating .uiStars .fullStar{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/x/MmmFHCK3KAn.png);background-repeat:no-repeat;background-size:auto;background-position:0 -18px}
+.uiStars{display:inline-block;position:relative;vertical-align:middle}
+.uiStars i{display:inline-block;height:11px;width:11px}
+.uiStars .emptyStar{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/x/MmmFHCK3KAn.png);background-repeat:no-repeat;background-size:auto;background-position:0 -102px}
+.uiStars .onefourthStar{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/x/MmmFHCK3KAn.png);background-repeat:no-repeat;background-size:auto;background-position:0 -138px}
+.uiStars .halfStar{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/x/MmmFHCK3KAn.png);background-repeat:no-repeat;background-size:auto;background-position:0 -126px}
+.uiStars .threefourthsStar{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/x/MmmFHCK3KAn.png);background-repeat:no-repeat;background-size:auto;background-position:0 -150px}
+.uiStars .fullStar{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/x/MmmFHCK3KAn.png);background-repeat:no-repeat;background-size:auto;background-position:0 -114px}
+.fbDummyComposerContent{position:relative;width:493px}
+.fbDummyComposer .postText{left:7px;position:absolute;top:5px}
+/* @noflip */
+.fbDummyComposer .controls{position:absolute;right:5px;top:64px}
+.fbDummyComposer .postButton{padding:2px 16px}
+.fbPrivacyAudienceRadioButton{border:1px solid #fff;border-radius:3px;display:block;margin:0 auto;padding-bottom:15px;text-align:center;min-width:90px;padding-left:10px;padding-right:10px;max-width:130px}
+.fbPrivacyAudienceRadioDummy{width:90px;height:0}
+.fbPrivacyAudienceRadioButton:hover{background-color:#f7f7f7;border:1px solid #f7f7f7}
+.fbPrivacyAudienceRadioButton:active{background-color:#f2f2f2;border:1px solid #f2f2f2}
+.fbPrivacyAudienceRadioButtonWrap{min-height:115px;min-width:112px}
+.fbPrivacyAudienceRadioButtonGroup .audienceGrid{margin:0 auto}
+.fbPrivacyAudienceRadioButtonGroup .selectedButton{background-color:#f7f7f7;border:1px solid #d6d6d6;box-shadow:inset 0 0 1px #dcdcdc}
+.fbPrivacyIndexPage{margin:0 auto}
+.fbPrivacyIndexPage .narrowSection, .fbPrivacyIndexPage .fbPrivacyIndexPageHeader{width:622px;margin:0 auto 10px}
+.fbPrivacyIndexPage .underage{width:592px;margin:0 auto 10px}
+.fbPrivacyIndexPage .fbPrivacyIndexPageHeader{margin:6px auto 7px}
+.fbPrivacyIndexPageHeader{color:#1c2a47;font-weight:bold;line-height:20px;min-height:20px;vertical-align:bottom}
+.fbPrivacyIndexPageHeader .uiHeader h2{font-size:16px}
+.fbPrivacyIndexPageItem{margin-bottom:19px}
+.fbPrivacyIndexPageItem .privacyLabel{width:450px}
+.fbPrivacyIndexPageItem .itemControl{width:150px}
+.fbPrivacyIndexPage .uiHeader h3{font-size:13px}
+.fbPrivacyIndexPageSectionHeader{margin:18px 0 4px -24px}
+.fbPrivacyIndexPageSectionHeader img{margin-top:3px}
+.fbPrivacyIndexPage .dummyComposerContainer{position:relative}
+.fbPrivacyIndexPage .dummyComposerOverlay{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yB/x/d8obU4nzJv5.png);height:138px;left:9px;position:absolute;top:-4px;width:597px;z-index:2}
+.fbPrivacyIndexPage .fbDummyComposerContent{margin:0 auto}
+.fbPrivacyIndexPage .nextPostPrivacyContainer{margin:32px auto 0 auto;text-align:center}
+.fbPrivacyIndexPage .controlPostStickyWidget{vertical-align:text-bottom}
+.fbPrivacyIndexPage .stickySettingsContainer{margin:40px auto 0 auto;width:500px}
+.nextPostPrivacyContainer .uiSelectorNormal .uiButtonSuppressed{background-image:none;padding-right:0}
+.fbPrivacyIndexPage .nextPostPrivacyOverlay{height:25px;margin-top:-2px;position:absolute;width:100%;z-index:2}
+.fbPrivacyIndexPage .nextPostPrivacyContainer .uiSelector{margin-left:-5px;padding-right:2px}
+.fbPrivacyIndexPage .nextPostPrivacyContainer .uiSelector .wrap{margin-top:-2px}
+.fbPrivacyIndexPage .nextPostPrivacyContainer .uiButtonText{margin-left:-4px}
+.fbTimelineLogColumn .fbTimelineNavigationPagelet, .fbTimelineLogLoadingIndicator{display:none}
+.async_saving .fbTimelineLogLoadingIndicator{display:block}
+.fbTimelineLogFilterForm{display:inline}
+.fbTimelineLogMonth div.profile-pagelet-section{margin-bottom:0}
+.fbTimelineLogMonth h3{border-bottom:3px solid #e1e1e1;font-size:15px;line-height:22px}
+.async_saving .fbTimelineLogMonth .uiMorePagerLoader{display:none}
+.async_saving .fbTimelineLogMonth .uiMorePager, .async_saving .fbTimelineLogMonth .uiMorePagerPrimary{display:block}
+.fbTimelineLogHeader{height:50px}
+.tinyViewport .fbTimelineLogHeader .fbTimelineStickyHeader{display:block}
+.fbTimelineSearchError{padding-left:20px}
+.fbTimelineLogFilterSelector .uiMenu{max-height:400px;overflow-y:auto}
+.fbTimelineLogFilterSelector .itemLabel{padding-right:7px}
+.fbTimelinePrivacySelector{background-color:#f2f2f2;border:1px solid;border-bottom:2px solid;border-color:#c9c9c9;border-radius:3px;padding:8px 25px 9px 15px}
+.fbTimelinePrivacySelector .logo{vertical-align:middle;height:30px}
+.fbTimelinePrivacySelector .name{font-size:13px;font-weight:bold}
+.fbTimelinePrivacySelectorBorder{border-left:1px solid #ddd}
+.fbTimelinePendingReview{background-color:#f5f7fa;border:1px solid;border-bottom:2px solid;border-color:#c4cde0;border-radius:3px;padding:12px 15px}
+.fbTimelinePendingReview .title{color:#666;font-size:13px}
+.fbTimelinePendingReview .text{color:gray;font-size:11px}
+.fbTimelinePendingReviewEdWrapper{bottom:-11px;height:144px;overflow:hidden;position:relative;-moz-transition:height .2s ease}
+.fbTimelinePendingReviewEd{background-color:#f4f5f9;background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/y6/x/SfQzmGXJ8Bu.png);background-position:3.8% top;background-repeat:no-repeat;border:1px solid #c4cde0;border-bottom:1px solid #d0d0d2;border-bottom:1px solid rgba(0, 0, 0, .15);border-radius:3px 3px 0 0;box-shadow:0 -8px 8px -8px rgba(0, 0, 0, .15) inset;height:107px;padding:26px 10px 9px 148px;position:relative}
+.fbTimelinePendingReviewEd .text{color:#666;font-size:13px;margin-top:5px}
+.fbTimelinePendingReviewEd .close{position:absolute;right:10px;top:10px}
+.fbTimelineLogBody{margin-bottom:30px}
+.fbTimelineLogStream .profile-pagelet-section{margin-bottom:0}
+.fbTimelineLogStream .uiMorePagerPrimary{border:0}
+.fbTimelineLogTimeNav{padding-bottom:3px}
+.fbTimelineLogColumn .fbTimelineSection{padding:20px 25px 10px}
+.fbTimelineLogColumn .fbTimelineSection .uiMorePager{margin:0 -25px -10px}
+.fbTimelineLogIntroMegaphone{border-radius:3px;margin:10px 0;padding:15px 20px}
+.fbTimelineLogColumn .pendingPostsHeader, .fbTimelineLogColumn .pendingProfileRequestsHeader{background-color:#fff;border-bottom:3px solid #e2e2e2;border-top:0;padding-left:0}
+.fbTimelineLogScrubber .selected ul{display:block}
+.fbTimelineLogScrubber .selected li.selected a{font-weight:bold}
+.fbTimelineLogColumn .fbProfileEditFieldInline{width:480px}
+.fbTimelineLogColumn .fbProfileEditFieldInline .privacyWidget{padding-top:0}
+.fbTimelineLogColumn .fbProfileEditFieldInline .rightCol{padding-left:0;width:41px}
+.fbTimelineLogNuxMegaphoneBody{border-radius:3px 3px 0 0;padding:15px 20px}
+.fbTimelineLogNuxMegaphoneFooter{border-radius:0 0 3px 3px;border-top:0;height:22px;padding:10px 20px 10px 20px;line-height:22px}
+.uiStreamMinistoryGroup{padding:10px 0 11px 60px}
+.uiStreamMinistoryGroup .uiStreamStory{padding-top:1px}
+.uiStreamMinistoryGroup .header{color:#aaa;padding:2px 0 8px}
+.uiStreamMinistoryGroup .uiStreamStory .ministoryMessage{color:#333}
+.uiStreamMinistoryGroup .uiStreamStory .ministoryInlineMessage{display:inline}
+.uiStreamMinistoryGroup .showSimilar{display:block;margin:0 2px 8px 22px}
+.uiStreamMinistoryGroup .showSimilarAjax{display:block;margin:2px 2px 0 22px}
+.uiStreamMinistoryGroup .ministoryUfi{margin-bottom:6px}
+.uiStream .uiStreamMinistory .uiStreamHide{margin-top:0}
+ul.timelineAllActivityStream > li{border-color:#e1e1e1}
+.fbStreamTimelineLogTimestamp{color:#999;font-size:10px}
+.fbStreamTimelineLogStory, .fbStreamTimelineGrid{width:100%}
+.fbStreamTimelineLogStory .uiStreamAttachments{margin:0}
+.fbStreamTimelineLogStory .songListContainer{position:relative;top:-1px}
+.fbStreamTimelineLogTimestampContainer{width:45px}
+.fbStreamTimelineLogIconContainer{width:35px}
+.timelineMinistoryGroup .uiStreamStory{padding-right:0}
+.timelineAllActivityStream .timelineMinistoryGroup .logstoryMessage .passiveName{font-weight:normal}
+.timelineAllActivityStream .activityDayHeader{border-top:0;line-height:20px;margin-top:20px}
+.fbTimelineAllActivityStaticSelector{padding-right:4px}
+.fbTimelineAllActivityStorySelector{text-align:left}
+.fbTimelineAllActivityStorySelector .wrap .uiSelectorButton, .fbTimelineAllActivityStorySelector .wrap .uiSelectorButton:active, .fbTimelineAllActivityStorySelector .wrap .uiSelectorButton:focus, .fbTimelineAllActivityStorySelector .wrap .uiSelectorButton:hover, .fbTimelineAllActivityStorySelector .wrap .uiButtonSuppressed:active, .fbTimelineAllActivityStorySelector .wrap .uiButtonSuppressed:focus, .fbTimelineAllActivityStorySelector .wrap .uiButtonSuppressed:hover{background-image:none;height:16px;margin-top:-4px;padding-left:5px;padding-right:5px}
+.fbTimelineAllActivityAudienceSelector .wrap .uiSelectorButton, .fbTimelineAllActivityAudienceSelector .wrap .uiSelectorButton:active, .fbTimelineAllActivityAudienceSelector .wrap .uiSelectorButton:focus, .fbTimelineAllActivityAudienceSelector .wrap .uiSelectorButton:hover, .fbTimelineAllActivityAudienceSelector .wrap .uiButtonSuppressed:active, .fbTimelineAllActivityAudienceSelector .wrap .uiButtonSuppressed:focus, .fbTimelineAllActivityAudienceSelector .wrap .uiButtonSuppressed:hover{background-image:none;margin-top:-4px;padding-right:8px}
+.fbTimelineAllActivityStorySelector .openToggler .uiSelectorButton, .fbTimelineAllActivityStorySelector .openToggler .uiSelectorButton:active, .fbTimelineAllActivityStorySelector .openToggler .uiSelectorButton:focus, .fbTimelineAllActivityStorySelector .openToggler .uiSelectorButton:hover, .fbTimelineAllActivityStorySelector .openToggler .uiButtonSuppressed:active, .fbTimelineAllActivityStorySelector .openToggler .uiButtonSuppressed:focus, .fbTimelineAllActivityStorySelector .openToggler .uiButtonSuppressed:hover, .fbTimelineAllActivityAudienceSelector .openToggler .uiSelectorButton, .fbTimelineAllActivityAudienceSelector .openToggler .uiSelectorButton:active, .fbTimelineAllActivityAudienceSelector .openToggler .uiSelectorButton:focus, .fbTimelineAllActivityAudienceSelector .openToggler .uiSelectorButton:hover, .fbTimelineAllActivityAudienceSelector .openToggler .uiButtonSuppressed:active, .fbTimelineAllActivityAudienceSelector .openToggler .uiButtonSuppressed:focus, .fbTimelineAllActivityAudienceSelector .openToggler .uiButtonSuppressed:hover{background-image:none}
+.logStoryControls .privateAppPrivacyIcon{vertical-align:middle}
+.fbTimelineNewSelectorLogStory .logStoryIcons{width:92px}
+.fbTimelineNewSelectorLogStory .logStoryControls{width:78px}
+.fbTimelineLogStoryControl .fbTimelineNewSelector{margin-left:2px}
+.fbTimelineNewSelector .uiSelectorButton, .fbTimelineNewSelector .uiSelectorButton:active, .fbTimelineNewSelector .uiSelectorButton:focus, .fbTimelineNewSelector .uiSelectorButton:hover{vertical-align:middle;background-color:transparent;background-image:none;padding:1px 18px 1px 3px}
+.fbTimelineNewStorySelector .uiSelectorButton .customimg{margin-left:-3px}
+.fbTimelineNewStorySelector .uiSelectorButton, .fbTimelineNewStorySelector .uiSelectorButton:active, .fbTimelineNewStorySelector .uiSelectorButton:focus, .fbTimelineNewStorySelector .uiSelectorButton:hover, .uiStreamMinistoryGroup:hover .fbTimelineNewStorySelector
+.uiSelectorButton:hover, .uiStreamStory:hover .fbTimelineNewStorySelector .uiSelectorButton:hover{padding:1px 14px 1px 4px}
+.fbTimelineNewSelectorLogStory .fbTimelineAllActivityStaticSelector{vertical-align:middle;padding-right:12px}
+.fbTimelineNewSelectorLogStory .fbTimelineAllActivityStaticSelector .img{vertical-align:middle}
+.uiStreamMinistoryGroup:hover .fbTimelineNewSelector .uiSelectorButton, .uiStreamStory:hover .fbTimelineNewSelector .uiSelectorButton{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yz/x/ELW8FjnbiZf.png);background-repeat:no-repeat;background-size:auto;background-position:-817px -7px;border:1px solid #ddd}
+.uiStreamMinistoryGroup:hover .fbTimelineNewSelector .uiSelectorButton:hover, .uiStreamStory:hover .fbTimelineNewSelector .uiSelectorButton:hover{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yK/x/nDEHv4nTejR.png);background-repeat:no-repeat;background-size:auto;background-position:-466px -492px;border:1px solid #999}
+.uiStreamMinistoryGroup:hover .fbTimelineNewSelector .openToggler
+.uiSelectorButton, .uiStreamStory:hover .fbTimelineNewSelector .openToggler .uiSelectorButton, .fbTimelineNewSelector .openToggler .uiSelectorButton{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yK/x/nDEHv4nTejR.png);background-repeat:no-repeat;background-size:auto;background-position:-466px -149px;background-color:#6d84b4;border:1px solid #3b5998;border-bottom-color:#6d84b4;box-shadow:none}
+.timelineAllActivityStream .timelineMinistoryGroup .logstoryMessage{color:#333}
+.timelineAllActivityStream .timelineMinistoryGroup{padding:7px 0 3px 0}
+.timelineMinistoryGroup .uiStreamStory{margin-bottom:0}
+.timelineLogStoryShowAll{padding:10px 0 5px 85px}
+.logStoryDescription{width:340px;padding-right:20px}
+.logStoryIcons{text-align:right;width:100px}
+.logStoryContent{width:225px}
+.logStoryControls{width:70px}
+.logStoryContent .uiAttachmentDesc{display:none}
+.logStoryContent .uiStreamAttachments .external .img{width:30px;height:30px}
+.logStoryContent .uiVideoThumb .img{max-width:80px;max-height:80px}
+.privacyAppsIcons .app-row{width:300px;padding:4px}
+.privacyAppsIcons .app-row:hover .app-last-used-date{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yB/x/tI3-tDFcdgh.gif) no-repeat left -2px}
+.privacyAppsIcons .app-row:hover{background-color:#eff2f7}
+.privacyAppsIcons .even{background-color:#f6f6f6}
+.privacyAppsIcons .img{height:16px;width:16px}
+.privacyAppsIcons .app-row-link{text-decoration:none}
+.privacyPlan .privacyGrid td{width:230px}
+.mainDescription{padding-right:80px}
+.itemList .listDisclosure{width:550px}
+.itemList .itemTitle{width:165px}
+.itemList .itemContent{width:570px}
+.itemList .itemContent label{font-weight:normal;color:#333}
+.itemList .itemDescription{width:330px}
+.itemList .itemControl{width:200px}
+.itemHasCheckbox .itemControl{margin-top:2px}
+.itemHasCheckbox label{position:relative;top:-1px}
+.itemList .formButtons{padding-left:550px}
+.privacyAppsActionText .img{margin-top:3px}
+#SettingsPage_Content .seeAndControlActionText .img{margin-top:-10px}
+.privacyAppsItemOptOut input{float:left}
+.privacyAppsItemOptOut .section{float:left;width:460px;margin-left:2px}
+.privacySearch .section{width:300px}
+.privacyPlan .privacyPlanDescription{line-height:1.4em;width:620px}
+.privacyPlanDirectoryControl{text-align:right}
+.privacyBlockItemTitle{width:160px}
+.privacyBlockItemContent{width:560px}
+._10v{border-color:#e9e9e9}
+._10w, ._10x ._10y{display:none}
+._10x ._10w{display:block}
+._220{float:left;padding:12px 0;width:730px}
+._10z:hover{text-decoration:none}
+._10z:hover ._10-{text-decoration:underline}
+._10z:hover ._10- .img{visibility:visible}
+._10z ._10- .img, ._10z.async_saving ._10- .img{visibility:hidden}
+._10_{color:#000;float:left;margin-right:10px;width:200px}
+._110{float:left;width:200px}
+._221{float:right;margin-right:10px}
+._10-{float:right;padding-left:25px}
+._10y .async_saving ._10-{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y4/x/GsNJNwuI-UM.gif) no-repeat 0 1px}
+._111{float:right;margin:14px 5px 0}
+._114{margin:0 auto 40px;width:760px}
+.fbSettingsEditor{position:relative}
+.fbSettingsEditorLabel{left:0;position:absolute;width:155px}
+.show_label .fbSettingsEditorFields{margin-left:175px}
+.fbSettingsEditorFields .saveThrobber,
+.fbNotifSettingsEditorFields .saveThrobber{vertical-align:middle}
+.fbSettingsEditorFields{width:400px}
+.fbSettingsEditorFields .label,
+.fbNotifSettingsEditorFields .label{min-width:100px}
+.wide_editor .fbSettingsEditorFields,
+.wide_editor .fbNotifSettingsEditorFields{width:550px}
+.fbSettingsEditorFields .extended_field,
+.fbNotifSettingsEditorFields .extended_field{margin-right:-140px}
+.fbSettingsEditorFields .spacer hr,
+.fbNotifSettingsEditorFields .spacer hr{background-color:#ccc}
+.fbSettingsError div{margin-left:159px}
+.fbSettingsErrorLabel{color:#c66}
+.fbNotifSettingsEditorLabel{left:0;position:absolute}
+.show_label .fbNotifSettingsEditorFields{margin-left:250px}
+.fbNotifSettingsEditorFields{width:325px}
+.fbSettingsList a.fbSettingsListLink{background:transparent;display:block;text-decoration:none}
+.fbSettingsList a.fbSettingsListLink:hover{background:#f7f7f7;text-decoration:none}
+.fbSettingsList .fbSettingsListItemLabel{color:#333;float:left;width:165px}
+.fbSettingsList .fbSettingsListItemEdited{background-color:#fff8bb}
+.fbSettingsList .fbSettingsListItemContent{display:block;margin-left:175px;width:445px}
+.fbSettingsList .fbSettingsListItemSaved, .fbSettingsList .fbSettingsListItemEdit{color:#3b5998;float:right;padding-left:25px;padding-right:5px;text-align:right}
+.fbSettingsList .fbSettingsListItemSaved{color:#777}
+.fbSettingsList a:hover .fbSettingsListItemEdit{text-decoration:underline}
+.fbSettingsList a:hover .fbSettingsListItemEdit .img{visibility:visible}
+.fbSettingsList .fbSettingsListItemEdit .img, .fbSettingsList a.async_saving .fbSettingsListItemEdit .img{visibility:hidden}
+.fbSettingsList a.async_saving .fbSettingsListItemEdit{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/y4/x/GsNJNwuI-UM.gif);background-repeat:no-repeat;background-size:auto;background-position:0 2px}
+.fbSettingsList .content{display:none}
+.fbSettingsList .fbSettingsListItemDelete{float:right;margin:12px 8px 0}
+.fbSettingsMobileRegisterForm{width:275px}
+.fbSettingsNotifs span.fbSettingsListItemLabel{width:300px}
+.fbNotifSettingsPanelList span.fbSettingsListItemLabel{width:240px}
+.fbSettingsNotifCount{display:inline-block;margin-right:10px;width:35px}
+.fbSettingsSections{border-bottom:1px solid #aaa}
+.fbSettingsSections .fbSettingsSectionsItem{padding-top:0}
+.fbSettingsSections .fbSettingsSectionsItem.fbSettingsSectionsItemBorderTop{border-top:1px solid #aaa}
+.fbSettingsSectionsItem .fbSettingsList{border-top:0;border-bottom:0}
+.fbSettingsSectionsItemName{width:165px;margin-top:10px}
+.fbSettingsSectionsItemContent{width:580px}
+.fbSettingsSections .subscriberCheckbox,
+.fbSettingsSections .publicSearchCheckbox{width:445px}
+.SettingsPage #headerArea{padding-bottom:0}
+.fbSettingsList .openPanel .fbSettingsListLink,
+.fbSettingsList .openPanel .fbSettingsListItemDelete{display:none}
+.fbSettingsList .openPanel .content{display:block}
+.fbSettingsList{border-bottom:1px solid #aaa;border-top:1px solid #aaa}
+.fbSettingsCheckboxText{vertical-align:middle}
+#SettingsPage_Content .megaphone_box{border-top-width:1px;margin-right:-20px}
+.UIToolbarWell_Content{overflow:hidden;padding:0 6px}
+.UIToolbarWell_MainContent{height:23px;padding:6px 0}
+.UIToolbarWell_Left{text-align:left;float:left}
+.UIToolbarWell_Right{float:right;text-align:right}
+.UIToolbarWell_Left .UIToolbarWell_Button .uiButton{margin-right:6px}
+.UIToolbarWell_SecondaryContent{border-top:1px solid #d7d7d7;padding:5px 0}
+.appCenterRightColumn{margin-left:20px;width:190px}
+.appCenterRightColumn .region{padding-left:6px;margin-top:4px}
+#app_center_list_right_column.fixed{position:fixed;margin-left:0}
+.fbPrivacyPage{width:760px;margin:0 auto 40px}
+.fbPrivacyPageHeader{line-height:20px;min-height:20px;padding-bottom:2px;vertical-align:bottom;padding:1px 0 18px}
+.fbPrivacyPageHeader .breadcrumbArrow{margin:0 8px}
+.fbPrivacyPageHeader,
+.fbPrivacyPageHeader a{font-size:16px;font-weight:bold;color:#1c2a47}
+.fbPrivacyPage .bottomBorder{border-bottom:solid 1px #ccc}
+#block_query,
+#block_email_query{width:175px}
+.blockListDataTable .uiList{margin-top:10px}
+.blockListDataTable .uiList li span{margin-right:5px}
+.blockListInvitesTypeahead{margin-right:150px}
+.blockListApplications{margin:10px 0 0 140px}
+.SettingsPage .UIFullPage_Container{width:770px}
+#SettingsPage_Content{min-height:300px;margin-bottom:20px}
+ul.SettingsPage_PrivacySections .privacy_section_title{color:#3b5998;font-weight:bold}
+ul.SettingsPage_PrivacySections a.privacy_section_link{color:gray;font-size:13px}
+ul.SettingsPage_PrivacySections a.privacy_section_link:hover{text-decoration:none}
+ul.SettingsPage_PrivacySections a.privacy_section_link:hover .privacy_section_title{text-decoration:underline}
+.privacy_content{border-top:1px solid #b3b3b3}
+.privacy_content a.privacy_icon_link{height:32px;width:32px}
+.privacy_section h3{border-bottom:1px solid #c0c0c0;padding:4px 5px 6px}
+.edit_mode_widget{font-size:13px;background-color:#eceff5;border:1px solid #d8dfea;line-height:20px;margin:10px 6px;padding:6px 6px 6px 10px}
+.edit_mode_widget label.uiButton{height:16px;line-height:16px}
+.edit_mode_widget img.privacy_icon{margin-top:2px}
+.password_dialog_fieldset{margin:15px 0 5px;text-align:center}
+.privacy_section{width:100%;border-spacing:0;border-collapse:collapse}
+.privacy_section_row{border-bottom:1px solid #dadada}
+.privacy_section_row:last-child{border-bottom:0}
+.privacy_section_row td{padding:10px 10px;vertical-align:middle}
+.privacy_section_row_highlight{background:#e2e2e2}
+.privacy_section_row input{float:left}
+.privacy_section_label{font-weight:bold;font-size:13px;color:#333;line-height:20px}
+.privacy_section_description{color:#828282}
+td.privacy_section_widget{width:250px;vertical-align:middle}
+tr.privacy_section_row .uiButton{margin:0}
+.privacy_checkbox_loader{float:left;height:16px;margin-right:7px;width:16px}
+.privacy_checkbox_loader img{vertical-align:bottom}
+.privacy_checkbox_loader .show_loading{display:none}
+.privacy_checkbox_loader.showLoading .hide_loading{display:none}
+.privacy_checkbox_loader.showLoading .show_loading{display:inline}
+td.privacy_section_checkbox{height:auto;!important
+height:45px;min-height:45px;vertical-align:middle;line-height:16px}
+.privacy_interstitial{padding-top:40px;border-top:1px solid #d6d9de}
+.privacy_viewas_table{color:#777;font-weight:bold}
+#SettingsPage_Content .indented_content{padding:25px 0 0 110px}
+#SettingsPage_Content .indented_content p{width:500px}
+#SettingsPage_Content .indented_content .bluebar p{width:auto}
+.applications_privacy_content .applications_settings_list{margin:0;padding:0 0 0 100px;line-height:16px}
+.applications_privacy_content li#platform_submit{padding-top:5px}
+.applications_privacy_content .applications_settings_list .inputcheckbox{margin-right:5px}
+.applications_preview_text{padding:5px 10px;border-bottom:1px solid #ccc}
+.applications_privacy_content .blocked_list{list-style:square inside;padding:0 0 0 100px}
+.applications_privacy_content .blocked_list input.as_link{font-family:'lucida grande',tahoma,verdana,arial,sans-serif;font-size:11px;overflow:visible;width:auto;text-align:left;background:none;margin:0;padding:0 0 0 10px;border:none;cursor:pointer;color:#3b5998;-moz-user-select:text;line-height:14px}
+.applications_privacy_content .blocked_list input.as_link::-moz-focus-inner{border:0;padding:0}
+.instant_personalization_content .bluebar{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yM/x/sMqH6Qj9x1V.png) no-repeat;height:130px;padding-left:335px}
+.instant_personalization_content{padding:25px}
+.instant_personalization_content
+.instant_personalization_title{width:500px}
+.instant_personalization_content .instant_personalization_checkbox_container{margin-top:20px}
+.instant_personalization_content
+.instant_personalization_label{float:left;width:479px}
+.instant_personalization_content
+.instant_personalization_friends{color:gray;font-size:9px;padding-top:6px}
+.uiMenuXItem .staticAnchor{color:#999}
+._6cw{border-bottom:1px solid #aaa}
+._6cx{border-top:1px solid #aaa}
+._5n-{overflow:auto;padding:10px 0 10px 10px}
+._5n-:hover{background:#f7f7f7;cursor:pointer}
+._6w7{margin-right:100px}
+._5o1{background-color:#f7f7f7}
+._6w8{padding:0;width:740px;margin-left:auto;margin-right:auto}
+._7do{color:#555}
+._5o2{overflow:auto;padding:10px 10px 5px 10px}
+._5o4{padding-bottom:10px}
+._7dp{padding-top:3px}
+._6w9{width:325px}
+._6wa{width:175px}
+._6w3{padding:10px 0 10px 10px;text-align:center}
+._6w3:hover{background:#f7f7f7;cursor:pointer;text-decoration:underline}
+._5o7{padding-bottom:10px}
+._5o6 ._5o8{border-top-width:1px;padding-top:10px}
+._5pb{float:right;font-weight:bold;padding-right:5px;text-align:right}
+._7dq{float:right;overflow:auto;text-align:left;width:410px}
+._7dr{border-collapse:collapse}
+._7dr td{border-collapse:collapse;border-right:1px solid #c6cbd6;border-top:hidden;vertical-align:top}
+._7dr td:last-child{border-right:0}
+._7ds{float:right;overflow:visible;text-align:left;width:170px}
+._7dt{width:40px}
+._7du{display:block;font-weight:bold}
+._7dv{border:hidden;border-collapse:collapse;border-color:#f7f7f7}
+._7dv td{border-top:solid 1px #ededed;overflow:visible;padding:10px 10px 10px 10px;vertical-align:middle}
+._7dw{padding-top:2px}
+._8-h ._5n-{background:#e7ebf2}
+._8-h ._5n-:hover{background:#f7f7f7;cursor:pointer}
+._8-h ._6w7{font-weight:bold}
+._8_5{border:1px solid #e5e5e5;margin-right:8px;padding:4px}
+._a56{border:1px solid #e5e5e5;padding:15px}
+._8_6{overflow:hidden}
+.sp_3flqt4{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/y3/x/1iI7Jn78ZYx.png);background-size:auto;background-repeat:no-repeat;display:inline-block;height:16px;width:16px}
+.sx_f05db9{background-position:-16px 0}
+.selected .sx_f05db9{background-position:0 0}
+.sx_4d2f25{background-position:0 -17px}
+.sx_442dce{background-position:0 -34px}
+.sx_c75b65{background-position:0 -51px}
+.sx_e2924b{width:15px;height:14px;background-position:-17px -17px}
+.sx_cebc5b{width:8px;height:11px;background-position:-17px -32px}
+.sp_44e2bn{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yA/x/ltdyqHzIoHu.png);background-size:auto;background-repeat:no-repeat;display:inline-block;height:16px;width:16px}
+.sx_3d7001{background-position:0 0}
+.sx_51fa16{background-position:0 -17px}
+.sp_737dkf{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/ys/x/HzT5V1tpals.png);background-size:auto;background-repeat:no-repeat;display:inline-block;height:9px;width:7px}
+.sx_dc5d7e{background-position:0 -25px}
+.sx_3e64fb{width:11px;height:11px;background-position:0 -13px}
+.sx_715b9a{width:12px;height:12px;background-position:0 0}
+.sp_8hst0l{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/y4/x/ZrlN5UNGthw.png);background-size:auto;background-repeat:no-repeat;display:inline-block;height:13px;width:13px}
+.sx_9a6e21{background-position:-0px -17px}
+.sx_e8c747{width:10px;height:16px;background-position:-0px -0px}
+.sp_ae4na9{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yP/x/LVwOhMtB4d0.png);background-size:auto;background-repeat:no-repeat;display:inline-block;height:17px;width:17px}
+.sx_a77751{width:16px;height:16px;background-position:-150px -92px}
+.sx_a7d130{background-position:-78px -92px}
+.sx_1f4b03{background-position:-96px -92px}
+.sx_c0e891{background-position:-114px -92px}
+.sx_c2edd8{background-position:-132px -92px}
+.sx_bb9f42{width:28px;height:28px;background-position:0 -120px}
+.sx_7652a7{width:28px;height:28px;background-position:-29px -120px}
+.sx_3cbfde{width:35px;height:27px;background-position:-42px -92px}
+.sx_f44e0b{width:41px;height:27px;background-position:0 -92px}
+.sx_c380c8{width:15px;height:16px;background-position:-167px -92px}
+.sx_d596d0{width:493px;height:91px;background-position:0 0}
+.sp_dconaq{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yj/x/zcuBjX5brRF.png);background-size:auto;background-repeat:no-repeat;display:inline-block;height:20px;width:40px}
+.sx_8099a1{width:25px;height:150px;background-position:0 0}
+.sx_f9105d{width:25px;height:150px;background-position:-26px 0}
+.sx_22fc19{width:72px;height:72px;background-position:0 -154px}
+.sx_afed01{width:120px;height:2px;background-position:0 -151px}
+.sx_6e2592{background-position:0 -248px}
+.sx_7d0a03{background-position:-41px -248px}
+.sx_3a9bbf{background-position:0 -269px}
+.sx_be0c15{background-position:-41px -269px}
+.sx_ec560f{background-position:0 -374px}
+.sx_25db00{background-position:-41px -290px}
+.sx_ce48f8{background-position:0 -311px}
+.sx_130e14{background-position:-41px -311px}
+.sx_eaf7bf{background-position:0 -332px}
+.sx_5c7105{background-position:-41px -332px}
+.sx_b17948{background-position:0 -353px}
+.sx_aa24ea{background-position:-41px -353px}
+.sx_caca67{background-position:0 -290px}
+.sx_367745{background-position:-41px -227px}
+.sx_052f42{background-position:0 -227px}
+.sx_8058c1{background-position:-73px -196px}
+.sx_dac1dc{background-position:-73px -175px}
+.sx_1b27fa{background-position:-73px -154px}
+.sx_3b5d72{background-position:-52px -126px}
+.sx_6fa800{background-position:-52px -105px}
+.sx_4ec16a{background-position:-52px -84px}
+.sx_8c1968{width:20px;background-position:-93px -47px}
+.sx_0f31fa{background-position:-52px -63px}
+.sx_c5ac6e{background-position:-52px -42px}
+.sx_9ce84f{background-position:-52px -21px}
+.sx_fc6f95{background-position:-52px 0}
+.sx_fb4706{width:22px;height:22px;background-position:-93px -24px}
+.sx_2043f6{width:23px;height:23px;background-position:-93px 0}
+.sx_4a7ec4{width:9px;height:14px;background-position:-102px -68px}
+.selected .sx_4a7ec4{background-position:-93px -68px}
+
+#bootloader_kbm0E { height: 42px; }
