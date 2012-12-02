@@ -415,7 +415,7 @@ html ._fu ._g3{display:none}
 #pageFooter a:last-child{margin-right:0}
 #pageFooter a:hover{text-decoration:underline}
 #contentCurve{background-color:#fff;border-bottom:1px solid #ccc;height:8px;font-size:1px}
-.hasLeftCol #contentCurve{border:1px solid #ccc;border-top:none;position:relative}
+.hasLeftCol #contentCurve{border:0px 1px solid #ccc;border-top:none;position:relative}
 #footerContainer{border-top:1px solid #eee;padding:8px 8px 38px;position:relative}
 #footerContainer .navigation{text-align:right}
 .noFooter #pageFooter{display:none}
