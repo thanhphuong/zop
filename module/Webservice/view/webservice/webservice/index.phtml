@@ -5,5 +5,8 @@ $content = array(
 			'PHP', 'Zend', 'JavaScript'
 		)
 	);
-$json = Zend\Json\Json::encode($content);?>
+$json = Zend\Json\Json::encode($content);
+$a = Zend\Json\Json::decode($json);?>
+
 <?php echo $json;?>
+<?php print_r($a);?>
