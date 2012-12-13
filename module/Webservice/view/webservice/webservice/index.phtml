@@ -1,0 +1,9 @@
+<?php
+$content = array(
+		'author' => 'Steve',
+		'categories' => array(
+			'PHP', 'Zend', 'JavaScript'
+		)
+	);
+$json = Zend\Json\Json::encode($content);?>
+<?php echo $json;?>

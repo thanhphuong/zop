@@ -1,7 +1,8 @@
 <?php
 return array(
-    'modules' => array(
+    'modules' => array(            
         'Application',
+            'Webservice',
     		'Account',
        		'Map',
     ),
