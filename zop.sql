@@ -20,11 +20,11 @@ USE `zop`;
 DROP TABLE IF EXISTS `zop_account`;
 
 CREATE TABLE `zop_account` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `pid` varchar(30) DEFAULT NULL,
   `email` varchar(200) NOT NULL,
   `phone` varchar(30) DEFAULT NULL,
-  `password` varchar(30) DEFAULT NULL,
+  `password` varchar(32) DEFAULT NULL,
   `full_name` varchar(60) NOT NULL,
   `first_name` varchar(30) NOT NULL,
   `last_name` varchar(30) NOT NULL,
@@ -35,11 +35,25 @@ CREATE TABLE `zop_account` (
   `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_date` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 /*Data for the table `zop_account` */
 
-insert  into `zop_account`(`id`,`pid`,`email`,`phone`,`password`,`full_name`,`first_name`,`last_name`,`gender`,`birthday`,`avatar`,`status`,`created_date`,`updated_date`) values (5,NULL,'x',NULL,'g','a','a',' c',1,'1997-10-17',NULL,0,'2012-10-28 13:19:02',NULL),(6,NULL,'v',NULL,'x','b','v','x',1,'1996-10-17',NULL,0,'2012-10-28 13:23:42',NULL),(7,NULL,'wer@yahoo.com',NULL,'ae','c','wer','wer',1,'1997-11-17',NULL,0,'2012-10-28 13:54:52',NULL),(8,NULL,'Wer1@yahoo.com',NULL,'dfgdg','d','fg','dfg',0,'1995-11-17',NULL,0,'2012-10-28 23:32:50',NULL),(9,NULL,'dfg@yahoo.com',NULL,'ggdgf','f','dfg','dgdg',1,'1996-11-17',NULL,0,'2012-10-28 23:33:54',NULL),(10,NULL,'sadf@yahoo.com',NULL,'23','g','adf','sdf',1,'1996-11-16',NULL,0,'2012-10-28 23:38:59',NULL),(11,NULL,'sadf1@yahoo.com',NULL,'dsfgdg','s','sdf','df',1,'1996-11-17',NULL,0,'2012-10-28 23:57:08',NULL);
+insert  into `zop_account`(`id`,`pid`,`email`,`phone`,`password`,`full_name`,`first_name`,`last_name`,`gender`,`birthday`,`avatar`,`status`,`created_date`,`updated_date`) values (7,'48658','btphuong2345@yahoo.com',NULL,'cab47add236cbd300fd86e668e51e0','Bùi Thanh Phương','Bùi','Thanh Phương',2,'1996-04-16',NULL,0,'2012-11-02 09:38:34',NULL);
+
+/*Table structure for table `zop_device` */
+
+DROP TABLE IF EXISTS `zop_device`;
+
+CREATE TABLE `zop_device` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL,
+  `did` int(11) NOT NULL,
+  `modified_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*Data for the table `zop_device` */
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
