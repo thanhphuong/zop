@@ -1,28 +1,27 @@
 <?php
 namespace Webservice\Controller;
-
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
 class WebserviceController extends AbstractActionController
-{	
+{
+
     private static $temp;
-	public function indexAction()
+
+    public function indexAction ()
     {
         return new ViewModel();
-    }    
-    
-    public function loginAction()
+    }
+
+    public function loginAction ()
     {
         $request = $this->getRequest();
-        if ($request->isGet()) {
-           $temp =  $request->getQuery();
+        if ($request->isPost()) {
+            $temp = $request->getPost();
         }
         
-        if ($request->isPost()){
-            $temp =  $request->getPost();
-        }
-        return new ViewModel(array("json" =>$temp));
+        return new ViewModel(array(
+                "json" => $temp
+        ));
     }
-    
 }
