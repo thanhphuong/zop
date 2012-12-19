@@ -27,9 +27,7 @@ class AccountController extends AbstractActionController
     }
 
     public function indexAction ()
-    {
-        $mailer = new Mailer();
-        $mailer->sendMail("btphuong2345@yahoo.com","test", "test content");
+    {        
         return new ViewModel();
     }
 

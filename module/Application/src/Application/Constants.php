@@ -4,5 +4,5 @@ namespace Application;
 
 abstract class Constants{
 	
-	const TEST = "ABCDEF";
+	const IS_SEND_MAIL = TRUE;
 }
