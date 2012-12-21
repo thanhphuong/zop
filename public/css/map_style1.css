@@ -2158,7 +2158,7 @@ table{word-wrap:normal}
 .fbx #pageHead, #blueBar #pageHead{padding-top:6px;width:981px}
 .sidebarMode .fbx #pageHead, .sidebarMode #blueBar #pageHead{padding-right:205px}
 #pageLogo{float:left;margin-left:-7px;padding-right:1px;z-index:5}
-#pageLogo a, #pageLogo a:hover, #pageLogo a:focus, #pageLogo a:active{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yV/x/ohNKx6O27Gq.png);background-repeat:no-repeat;background-size:auto;background-position:1px -152px;display:block;height:31px;outline:none;overflow:hidden;text-indent:-999px;white-space:nowrap;width:103px}
+#pageLogo a, #pageLogo a:hover, #pageLogo a:focus, #pageLogo a:active{background-image:url(../images/logo_mini.png);background-repeat:no-repeat;background-size:auto;background-position:1px -152px;display:block;height:31px;outline:none;overflow:hidden;text-indent:-999px;white-space:nowrap;width:103px}
 #pageLogo a:hover, #pageLogo a:focus, #pageLogo a:active{background-color:#4b67a1}
 #headNav{height:30px;margin-left:176px}
 #pageNav{margin-right:1px}
