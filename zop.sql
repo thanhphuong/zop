@@ -9,11 +9,10 @@ MySQL - 5.5.25a : Database - zop
 /*!40101 SET SQL_MODE=''*/;
 
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 CREATE DATABASE /*!32312 IF NOT EXISTS*/`zop` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
-
-USE `zop`;
 
 /*Table structure for table `zop_account` */
 
@@ -39,8 +38,6 @@ CREATE TABLE `zop_account` (
 
 /*Data for the table `zop_account` */
 
-insert  into `zop_account`(`id`,`pid`,`email`,`phone`,`password`,`full_name`,`first_name`,`last_name`,`gender`,`birthday`,`avatar`,`status`,`created_date`,`updated_date`) values (7,'48658','btphuong2345@yahoo.com',NULL,'cab47add236cbd300fd86e668e51e0','Bùi Thanh Phương','Bùi','Thanh Phương',2,'1996-04-16',NULL,0,'2012-11-02 09:38:34',NULL);
-
 /*Table structure for table `zop_device` */
 
 DROP TABLE IF EXISTS `zop_device`;
@@ -55,6 +52,26 @@ CREATE TABLE `zop_device` (
 
 /*Data for the table `zop_device` */
 
+/*Table structure for table `zop_location` */
+
+DROP TABLE IF EXISTS `zop_location`;
+
+CREATE TABLE `zop_location` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL,
+  `time` datetime NOT NULL,
+  `latitude` double NOT NULL,
+  `longitude` double NOT NULL,
+  `altitude` double DEFAULT NULL,
+  `accuracy` float DEFAULT NULL,
+  `speed` float DEFAULT NULL,
+  `created_date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*Data for the table `zop_location` */
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
