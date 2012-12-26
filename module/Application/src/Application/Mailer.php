@@ -1,6 +1,6 @@
 <?php
 namespace Application;
-use Account\Model\Account;
+use Application\Model\Account;
 use Zend\Mail\Headers;
 use Zend\Mail\Message;
 use Zend\Mail\Transport\Smtp as SmtpTransport;

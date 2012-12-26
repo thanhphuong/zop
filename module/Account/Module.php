@@ -1,6 +1,6 @@
 <?php
 namespace Account;
-use Account\Model\AccountTable;
+use Application\Model\AccountTable;
 use Zend\ModuleManager\ModuleManager;
 
 class Module
@@ -40,7 +40,7 @@ class Module
     {
         return array(
                 'factories' => array(
-                        'Account\Model\AccountTable' => function  ($sm)
+                        'Application\Model\AccountTable' => function  ($sm)
                         {
                             $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
                             $table = new AccountTable($dbAdapter);

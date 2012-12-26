@@ -5,7 +5,7 @@ use Application\ValidationConstants;
 use Application\Mailer;
 use Application\Service;
 use Application\Constants;
-use Account\Model\Account;
+use Application\Model\Account;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Application\SessionNames;
@@ -21,7 +21,7 @@ class AccountController extends AbstractActionController
     {
         if (! $this->accountTable) {
             $sm = $this->getServiceLocator();
-            $this->accountTable = $sm->get('Account\Model\AccountTable');
+            $this->accountTable = $sm->get('Application\Model\AccountTable');
         }
         return $this->accountTable;
     }

@@ -1,5 +1,9 @@
 <?php
 namespace Webservice;
+use Application\Model\LocationTable;
+
+use Application\Model\DeviceTable;
+
 use Webservice\Model\GPSTable;
 use Zend\ModuleManager\ModuleManager;
 
@@ -40,11 +44,23 @@ class Module
     {
         return array(
                 'factories' => array(
-                        'Webservice\Model\GPSTable' => function  ($sm)
+                        'Application\Model\AccountTable' => function  ($sm)
                         {
                             $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-                            $table = new GPSTable($dbAdapter);
+                            $table = new AccountTable($dbAdapter);
                             return $table;
+                        },
+                        'Application\Model\DeviceTable' => function  ($sm)
+                        {
+                        	$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                        	$table = new DeviceTableTable($dbAdapter);
+                        	return $table;
+                        },
+                        'Application\Model\LocationTable' => function  ($sm)
+                        {
+                        	$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                        	$table = new LocationTableTable($dbAdapter);
+                        	return $table;
                         }
                 )
         );

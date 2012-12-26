@@ -1,5 +1,5 @@
 <?php
-namespace Account\Model;
+namespace Application\Model;
 
 class Account
 {
@@ -8,7 +8,9 @@ class Account
 
     const STATUS_USE = 1;
 
-    const STatus_DELETE = 2;
+    const STATUS_DELETE = 2;
+    
+    const STATUS_LOCK = 3;
 
     public $id;
 
