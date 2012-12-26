@@ -1,5 +1,6 @@
 <?php
 namespace Webservice\Controller;
+use Zend\Http\Header\Location;
 use Zend\Json\Json;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
@@ -26,15 +27,6 @@ class WebserviceController extends AbstractActionController
         return $this->accountTable;
     }
 
-    public function getDeviceTable ()
-    {
-        if (! $this->deviceTable) {
-            $sm = $this->getServiceLocator();
-            $this->deviceTable = $sm->get('Application\Model\DeviceTable');
-        }
-        return $this->deviceTable;
-    }
-
     public function getLocationTable ()
     {
         if (! $this->locationTable) {
@@ -54,11 +46,11 @@ class WebserviceController extends AbstractActionController
         $pid = 0;
         $request = $this->getRequest();
         if ($request->isPost()) {
-            $pid = checkLogin($request->getPost());
+            $pid = $this->checkLogin($request->getPost());
         }
         
         $content = array(
-                'pid' => $did
+                'pid' => $pid
         );
         
         $result = Json::encode($content);
@@ -67,21 +59,26 @@ class WebserviceController extends AbstractActionController
         ));
     }
 
-    public function syncAction ()
+    public function saveLocationAction ()
     {
-        $pid = 0;
+        $result = 0;
         $request = $this->getRequest();
         if ($request->isPost()) {
-        	$pid = checkLogin($request->getPost());
+            $location = new Location();
+            $location->exchangeArray($request->getPost());
+            try {
+                $this->getLocationTable()->saveLocation($location);
+                $result = 1;
+            } catch (Exception $e) {}
         }
         
         $content = array(
-        		'pid' => $did
+                'result' => $result
         );
         
         $result = Json::encode($content);
         return new ViewModel(array(
-        		"result" => $result
+                "result" => $result
         ));
     }
 
