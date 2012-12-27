@@ -49,6 +49,23 @@ class LocationTable extends AbstractTableGateway
         return $row;
     }
 
+    public function getLastLocationByPid ($pid)
+    {
+        $pid = (int) $pid;
+        $select = new Select();
+        $select->from($this->table);
+        $select->where(array('pid' => $pid));
+        $select->order('time DESC');
+        $select->limit(1);        
+        $rowset = $this->executeSelect($select);
+        $row = $rowset->current();
+        if (! $row) {
+            throw new \Exception("Could not find row $id");
+        }        
+        
+        return $row;
+    }
+
     public function saveLocation (Location $location)
     {
         $data = array(

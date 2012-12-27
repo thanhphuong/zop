@@ -1,7 +1,7 @@
 <?php
 namespace Application\Model;
 
-class Account
+class Location
 {
 
     public $id;

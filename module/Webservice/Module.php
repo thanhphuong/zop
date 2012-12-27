@@ -2,9 +2,7 @@
 namespace Webservice;
 use Application\Model\LocationTable;
 
-use Application\Model\DeviceTable;
-
-use Webservice\Model\GPSTable;
+use Application\Model\AccountTable;
 use Zend\ModuleManager\ModuleManager;
 
 class Module
@@ -50,16 +48,10 @@ class Module
                             $table = new AccountTable($dbAdapter);
                             return $table;
                         },
-                        'Application\Model\DeviceTable' => function  ($sm)
-                        {
-                        	$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-                        	$table = new DeviceTableTable($dbAdapter);
-                        	return $table;
-                        },
                         'Application\Model\LocationTable' => function  ($sm)
                         {
                         	$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-                        	$table = new LocationTableTable($dbAdapter);
+                        	$table = new LocationTable($dbAdapter);
                         	return $table;
                         }
                 )

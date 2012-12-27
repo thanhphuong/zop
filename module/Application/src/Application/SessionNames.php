@@ -9,4 +9,6 @@ abstract class SessionNames
 
     const ERROR_FORM = "zop_error_FORM";
     
+    const LOGIN_ACCOUNT = "zop_login_account";
+    
 }

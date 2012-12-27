@@ -10,13 +10,9 @@ use Application\InputFilter;
 class WebserviceController extends AbstractActionController
 {
 
-    protected $accountTable;
-
-    protected $deviceTable;
+    protected $accountTable;    
 
     protected $locationTable;
-
-    protected $translate;
 
     public function getAccountTable ()
     {

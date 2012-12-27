@@ -1,3 +1,75 @@
+<style>
+#map_canvas {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+</style>
+<script
+	src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization">
+    </script>
+<script>
+var map;
+var markersArray = [];
+
+function initialize() {
+  var lat = <?php echo $location->latitude; ?>;
+  var lon = <?php echo $location->longitude; ?>;
+  var haightAshbury = new google.maps.LatLng(lat, lon);
+  var mapOptions = {
+    zoom: 12,
+    center: haightAshbury,
+    mapTypeId: google.maps.MapTypeId.TERRAIN
+  };
+  map =  new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+  addMarker(haightAshbury);
+  google.maps.event.addListener(map, 'click', function(event) {
+    addMarker(event.latLng);
+  });
+}
+
+function addMarker(location) {
+  marker = new google.maps.Marker({
+    position: location,
+    map: map
+  });
+  markersArray.push(marker);
+}
+
+// Removes the overlays from the map, but keeps them in the array
+function clearOverlays() {
+  if (markersArray) {
+    for (i in markersArray) {
+      markersArray[i].setMap(null);
+    }
+  }
+}
+
+// Shows any overlays currently in the array
+function showOverlays() {
+  if (markersArray) {
+    for (i in markersArray) {
+      markersArray[i].setMap(map);
+    }
+  }
+}
+
+// Deletes all markers in the array by removing references to them
+function deleteOverlays() {
+  if (markersArray) {
+    for (i in markersArray) {
+      markersArray[i].setMap(null);
+    }
+    markersArray.length = 0;
+  }
+}  
+
+  </script>
+
+
+
+
 <div id="main_map" style="height: 500px; width: 800px;">
 
 	<div id="map_canvas"></div>

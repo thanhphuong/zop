@@ -35,7 +35,11 @@ class AccountController extends AbstractActionController
     { 
         $request = $this->getRequest();
         if ($request->isPost()) {
-            if ($this->isValidLogin($request->getPost())) { 
+            if ($this->isValidLogin($request->getPost())) {
+                $data = $request->getPost();
+                $account = $this->getAccountTable()->getAccountByEmail($data['email']);
+                $_SESSION[SessionNames::LOGIN_ACCOUNT] = $account;
+                 
                 return $this->redirect()->toRoute('map');
             }
             if (! isset($_SESSION)) {

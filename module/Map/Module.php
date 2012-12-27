@@ -1,7 +1,8 @@
 <?php
 namespace Map;
-use Map\Model\GPSTable;
+
 use Zend\ModuleManager\ModuleManager;
+use Application\Model\LocationTable;
 
 class Module
 {
@@ -40,10 +41,10 @@ class Module
     {
         return array(
                 'factories' => array(
-                        'Map\Model\GPSTable' => function  ($sm)
+                        'Application\Model\LocationTable' => function  ($sm)
                         {
                             $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-                            $table = new GPSTable($dbAdapter);
+                            $table = new LocationTable($dbAdapter);
                             return $table;
                         }
                 )
