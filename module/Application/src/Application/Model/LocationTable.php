@@ -71,9 +71,9 @@ class LocationTable extends AbstractTableGateway
         $data = array(
                 'pid' => $location->pid,
                 'time' => $location->time,
-                'latitude' => $location->pid,
-                'longitude' => $location->pid,
-                'altitude' => $location->pid,
+                'latitude' => $location->latitude,
+                'longitude' => $location->longitude,
+                'altitude' => $location->altitude,
                 'accuracy' => $location->accuracy,
                 'speed' => $location->speed,
                 'created_date' => $location->created_date

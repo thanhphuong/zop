@@ -1,11 +1,11 @@
 <?php
 namespace Webservice\Controller;
-use Zend\Http\Header\Location;
 use Zend\Json\Json;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Application\Model\Account;
 use Application\InputFilter;
+use Application\Model\Location;
 
 class WebserviceController extends AbstractActionController
 {
@@ -44,18 +44,13 @@ class WebserviceController extends AbstractActionController
         if ($request->isPost()) {
             $pid = $this->checkLogin($request->getPost());
         }
-        
-        $content = array(
-                'pid' => $pid
-        );
-        
-        $result = Json::encode($content);
+                
         return new ViewModel(array(
-                "result" => $result
+                "result" => $pid
         ));
     }
 
-    public function saveLocationAction ()
+    public function savelocationAction ()
     {
         $result = 0;
         $request = $this->getRequest();
@@ -68,11 +63,6 @@ class WebserviceController extends AbstractActionController
             } catch (Exception $e) {}
         }
         
-        $content = array(
-                'result' => $result
-        );
-        
-        $result = Json::encode($content);
         return new ViewModel(array(
                 "result" => $result
         ));
@@ -97,7 +87,7 @@ class WebserviceController extends AbstractActionController
         if ($account->status == Account::STATUS_LOCK)
             return (- 5);
         
-        if ($inputFilter->checkEmpty($data['password']) || ! $inputFilter->checkStringLength($data['password'], 4, 30) || $account->password != $data['password'])
+        if ($inputFilter->checkEmpty($data['password']) || ! $inputFilter->checkStringLength($data['password'], 4, 30) || $account->password != md5($data['password']))
             return (- 2);
         
         return $account->pid;
