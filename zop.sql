@@ -11,7 +11,7 @@ MySQL - 5.5.25a : Database - zop
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`zop` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
 
 /*Table structure for table `zop_account` */
 
@@ -39,6 +39,20 @@ CREATE TABLE `zop_account` (
 /*Data for the table `zop_account` */
 
 insert  into `zop_account`(`id`,`pid`,`email`,`phone`,`password`,`full_name`,`first_name`,`last_name`,`gender`,`birthday`,`avatar`,`status`,`created_date`,`updated_date`) values (1,1001,'btphuong2345@yahoo.com',NULL,'755de30edbc2c7356743a18292dc360b','Bùi Thanh Phương','Bùi','Thanh Phương',2,'1995-11-17',NULL,1,'2012-12-27 09:21:14','2012-12-27 09:21:14'),(2,90827,'btphuong2345@gmail.com',NULL,'755de30edbc2c7356743a18292dc360b','Bùi Thanh Phương','Bùi','Thanh Phương',2,'1995-11-17',NULL,0,'2012-12-27 09:23:41',NULL);
+
+/*Table structure for table `zop_friend` */
+
+DROP TABLE IF EXISTS `zop_friend`;
+
+CREATE TABLE `zop_friend` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL,
+  `friend` int(11) NOT NULL,
+  `created_date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*Data for the table `zop_friend` */
 
 /*Table structure for table `zop_location` */
 
