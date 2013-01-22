@@ -1,7 +1,6 @@
 <?php
 namespace Account\Controller;
 use Application\ValidationConstants;
-
 use Application\Mailer;
 use Application\Service;
 use Application\Constants;
@@ -17,6 +16,10 @@ class AccountController extends AbstractActionController
 
     protected $accountTable;
 
+    protected $form;
+
+    protected $errors;
+
     public function getAccountTable ()
     {
         if (! $this->accountTable) {
@@ -27,28 +30,29 @@ class AccountController extends AbstractActionController
     }
 
     public function indexAction ()
-    {        
+    {
         return new ViewModel();
     }
 
     public function loginAction ()
-    { 
+    {
         $request = $this->getRequest();
         if ($request->isPost()) {
             if ($this->isValidLogin($request->getPost())) {
                 $data = $request->getPost();
                 $account = $this->getAccountTable()->getAccountByEmail($data['email']);
                 $_SESSION[SessionNames::LOGIN_ACCOUNT] = $account;
-                 
+                
                 return $this->redirect()->toRoute('map');
             }
-            if (! isset($_SESSION)) {
-                session_start();
-            }
-            $_SESSION[SessionNames::ERROR_FORM] = $request->getPost();
+            
+            $this->form = $request->getPost();
         }
         
-        return new ViewModel();
+        return array(
+                "errors" => $this->errors,
+                "form" => $this->form
+                );
     }
 
     public function logoutAction ()
@@ -57,7 +61,7 @@ class AccountController extends AbstractActionController
     }
 
     public function registerAction ()
-    {     
+    {
         $request = $this->getRequest();
         if ($request->isPost()) {
             
@@ -88,46 +92,71 @@ class AccountController extends AbstractActionController
     }
 
     private function isValidLogin ($data)
-    {        
-    	$service = new Service();
-    	$translate = $service->getTranslate($this);
-    	$inputFilter = new InputFilter();
-    	$validation = new Validation();    	
-    
-    	if ($inputFilter->checkEmpty($data['email']) || ! $inputFilter->checkEmail($data['email']))    
-    	{    	
-    	    $validation->setByKey(ValidationConstants::ERROR_LOGIN_TITLE, $translate("Incorrect username"));
-    	    $validation->setByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_1, $translate("The username you entered does not belong to any account."));
-    	    $validation->setByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_2, $translate("You can login using any email, username or mobile phone number associated with your account. Make sure that it is typed correctly."));
-    		$service->setValidation(SessionNames::ERROR, $validation);
-    		return false;
-    	}
-    	
-    	
-    	   
-    	$account = $this->getAccountTable()->getAccountByEmail($data['email']);    	
-    	
-    	if ($account == null || $account->email != trim($data['email'])) {
-    	    $validation->setByKey(ValidationConstants::ERROR_LOGIN_TITLE, $translate("Incorrect Email"));
-    	    $validation->setByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_1, $translate("The email you entered does not belong to any account."));
-    	    $validation->setByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_2, $translate("You can login using any email, username or mobile phone number associated with your account. Make sure that it is typed correctly."));
-    		$service->setValidation(SessionNames::ERROR, $validation);
-    	    return false;
-    	} 
-    	
-    	
-    	if ( $inputFilter->checkEmpty($data['password']) || ! $inputFilter->checkStringLength($data['password'], 4, 30) || $account->password != md5($data['password']))
-    	{    	    
-    		$validation->setByKey(ValidationConstants::ERROR_LOGIN_TITLE, $translate("Please re-enter your password"));
-    		$validation->setByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_1, $translate("The password you entered is incorrect. Please try again (make sure your caps lock is off)."));
-    		$validation->setByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_2, $translate("Forgot your password? <a target='' href=\"/recover.php?email_or_phone=sf%40yahoo.com\">Request a new one.</a>"));
-    		$service->setValidation(SessionNames::ERROR, $validation);
-    		return false;
-    	}
-    
-    	return true;
+    {
+        $service = new Service();
+        $translate = $service->getTranslate($this);
+        $inputFilter = new InputFilter();
+        $email = strtolower(trim($data['email'])); 
+        
+        if ($inputFilter->checkEmpty($email) || ! $inputFilter->checkEmail($email)) {
+            $this->errors = array(
+                    "title" => $translate("Incorrect username"),
+                    "error1" => $translate("The username you entered does not belong to any account."),
+                    "error2" => $translate("You can login using any email, username or mobile phone number associated with your account. Make sure that it is typed correctly.") 
+            );            
+            return false;
+        }
+        
+        $account = $this->getAccountTable()->getAccountByEmail($email);        
+        
+        if ($account == null) {
+            $this->errors = array(
+            		"title" => $translate("Incorrect Email"),
+            		"error1" => $translate("The email you entered does not belong to any account."),
+            		"error2" => $translate("You can login using any email, username or mobile phone number associated with your account. Make sure that it is typed correctly.")
+            );          
+            return false;
+        }
+        
+        if ($account->status == Account::STATUS_NOT_VERIFY) {
+        	$this->errors = array(
+        			"title" => $translate("Verify Email"),
+        			"error1" => $translate("You must verify your email address before you can use it on ProjectName services."),
+        			"error2" => sprintf($translate("Verify your email? <a target='' href=\"/verify.php?email=%s\">Request a new one.</a>"), $account->email)
+        	);
+        	return false;
+        }
+        
+//         if ($account->status == Account::STATUS_LOCK) {
+//         	$this->errors = array(
+//         			"title" => $translate("Locked Account"),
+//         			"error1" => $translate("Your account locked."),
+//         			"error2" => $translate("You can login using any email, username or mobile phone number associated with your account. Make sure that it is typed correctly.")
+//         	);
+//         	return false;
+//         }
+        
+//         if ($account->status == Account::STATUS_DELETE) {
+//         	$this->errors = array(
+//         			"title" => $translate("Incorrect Email"),
+//         			"error1" => $translate("The email you entered does not belong to any account."),
+//         			"error2" => $translate("You can login using any email, username or mobile phone number associated with your account. Make sure that it is typed correctly.")
+//         	);
+//         	return false;
+//         }
+        
+        if ($inputFilter->checkEmpty($data['password']) || ! $inputFilter->checkStringLength($data['password'], 4, 30) || $account->password != md5($data['password'])) {
+            $this->errors = array(
+            		"title" => $translate("Please re-enter your password"),
+            		"error1" => $translate("The password you entered is incorrect. Please try again (make sure your caps lock is off)."),
+            		"error2" => sprintf($translate("Forgot your password? <a target='' href=\"/recover.php?email=%s\">Request a new one.</a>"), $account->email)
+            );            
+            return false;
+        }
+        
+        return true;
     }
-    
+
     private function isValidRegister ($data)
     {
         $service = new Service();

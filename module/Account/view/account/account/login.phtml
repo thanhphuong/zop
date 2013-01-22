@@ -49,26 +49,21 @@ use Application\ValidationConstants;?>
                                 if (! isset($_SESSION)) {
                                     session_start();
                                 } 
-						        $post = isset($_SESSION[SessionNames::ERROR_FORM]) ? $_SESSION[SessionNames::ERROR_FORM] : null;							        
+						        $post = isset($form) ? $form : null;							        
                            ?>
                          <form method="post" action="#" id="login_form">     
-                            <?php 								    
-						       $service = new Service(); 
-                               $validation = $service->getValidation(SessionNames::ERROR);                                   
-                               
-                               if ($validation->getByKey(ValidationConstants::ERROR_LOGIN_TITLE) != "" &&
-                                   $validation->getByKey(ValidationConstants:: ERROR_LOGIN_DESCRIPTION_1) != "" &&
-                                   $validation->getByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_2) != "" ) {                                      
+                            <?php
+                               $validation = $errors;
+                               if (isset($validation)) {                                      
 							?>                        
                              <div class="pam login_error_box uiBoxRed">
-                                 <div class="fsl fwb fcb"><?php echo $validation->getByKey(ValidationConstants::ERROR_LOGIN_TITLE );?></div>
+                                 <div class="fsl fwb fcb"><?php echo $validation["title"];?></div>
                                  <div>
-                                     <p><?php echo $validation->getByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_1);?></p>
-                                     <p><?php echo $validation->getByKey(ValidationConstants::ERROR_LOGIN_DESCRIPTION_2);?></p>
+                                     <p><?php echo $validation["error1"];?></p>
+                                     <p><?php echo $validation["error2"];?></p>
                                  </div>
                              </div>                                 
-                             <?php 
-    						        $service->setValidation(SessionNames::ERROR, null);
+                             <?php
                                 }
                              
                               ?>
@@ -98,8 +93,7 @@ use Application\ValidationConstants;?>
                                  </div>
                                  </div>
                                      <p class="reset_password form_row"><a tabindex="-1" target="" href="#"><?php echo $this->translate('Forgot your password?')?></a></p>
-                             </div>
-                             <?php unset($_SESSION[SessionNames::ERROR_FORM]);?>		
+                             </div>                            		
                          </form>
                      </div>
                  </div>
