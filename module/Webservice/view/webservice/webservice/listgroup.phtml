@@ -1,0 +1,31 @@
+
+<?php 
+	foreach ($result as $group) : 
+	echo ($group->id . ":" . $group->name . "|");
+	endforeach; 
+?>
+<?php if (false){?>
+<form method="post" action="#" id="login_form">
+	<input type="text" value="" id="pid" name="pid" class="inputtext"> 
+	<input
+		type="text" value="" id="time" name="time" class="inputtext">
+	<input type="text"
+		value="" id="latitude" name="latitude" class="inputtext"> 
+	<input type="text" value=""
+		id="longitude" name="longitude" class="inputtext">
+
+	<div class="form_row clearfix" id="buttons">
+		<label class="login_form_label"></label>
+		<div id="login_button_inline">
+			<label for="u3a4sfe2" id="loginbutton"
+				class="uiButton uiButtonConfirm uiButtonLarge"> <input type="submit"
+				id="u3a4sfe2" name="login"
+				value="<?php echo $this->translate('Log In')?>">
+			</label>
+		</div>
+
+	</div>
+	</div>
+
+</form>
+<?php }?>

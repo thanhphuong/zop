@@ -13,6 +13,8 @@ class WebserviceController extends AbstractActionController
     protected $accountTable;    
 
     protected $locationTable;
+	
+	protected $groupTable;
 
     public function getAccountTable ()
     {
@@ -30,6 +32,15 @@ class WebserviceController extends AbstractActionController
             $this->locationTable = $sm->get('Application\Model\LocationTable');
         }
         return $this->locationTable;
+    }
+	
+	public function getGroupTable ()
+    {
+        if (! $this->groupTable) {
+            $sm = $this->getServiceLocator();
+            $this->groupTable = $sm->get('Application\Model\GroupTable');
+        }
+        return $this->groupTable;
     }
 
     public function indexAction ()
@@ -67,6 +78,15 @@ class WebserviceController extends AbstractActionController
                 "result" => $result
         ));
     }
+	
+	public function listgroupAction ()
+	{
+		$pid = 90827;
+        $result = $this->getGroupTable()->listGroupByPid($pid);                        
+        return array(
+                "result" => $result,
+        );
+	}
 
     private function checkLogin ($data)
     {

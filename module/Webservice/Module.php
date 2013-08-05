@@ -1,6 +1,7 @@
 <?php
 namespace Webservice;
 use Application\Model\LocationTable;
+use Application\Model\GroupTable;
 
 use Application\Model\AccountTable;
 use Zend\ModuleManager\ModuleManager;
@@ -52,6 +53,12 @@ class Module
                         {
                         	$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
                         	$table = new LocationTable($dbAdapter);
+                        	return $table;
+                        },
+						'Application\Model\GroupTable' => function  ($sm)
+                        {
+                        	$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                        	$table = new GroupTable($dbAdapter);
                         	return $table;
                         }
                 )
